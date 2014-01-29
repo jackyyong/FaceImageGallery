@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8524622718944F94001315D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622618944F94001315D2 /* Foundation.framework */; };
+		8524622918944F94001315D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622818944F94001315D2 /* CoreGraphics.framework */; };
+		8524622B18944F94001315D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622A18944F94001315D2 /* UIKit.framework */; };
+		8524623118944F94001315D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8524622F18944F94001315D2 /* InfoPlist.strings */; };
+		8524623318944F94001315D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524623218944F94001315D2 /* main.m */; };
+		8524623718944F94001315D2 /* FIGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524623618944F94001315D2 /* FIGAppDelegate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		8524623A18944F94001315D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8524623818944F94001315D2 /* Main.storyboard */; };
+		8524623F18944F94001315D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8524623E18944F94001315D2 /* Images.xcassets */; };
+		8524624618944F94001315D2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524624518944F94001315D2 /* XCTest.framework */; };
+		8524624718944F94001315D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622618944F94001315D2 /* Foundation.framework */; };
+		8524624818944F94001315D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622A18944F94001315D2 /* UIKit.framework */; };
+		8524625018944F94001315D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8524624E18944F94001315D2 /* InfoPlist.strings */; };
+		8524625218944F94001315D2 /* FaceImageGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524625118944F94001315D2 /* FaceImageGalleryTests.m */; };
+		8524627A18945066001315D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8524625E18945066001315D2 /* Default-568h@2x.png */; };
+		8524628318945066001315D2 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627218945066001315D2 /* JASidePanelController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627418945066001315D2 /* UIViewController+JASidePanel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		853F8F4C18997EB400477C94 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F4B18997EB400477C94 /* iCarousel.m */; };
+		853F8F521899810500477C94 /* FIGiCarouselAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */; };
+		853F8F551899887E00477C94 /* FIGiCarouselPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */; };
+		859796AD1894EFCB00555D88 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796AC1894EFCB00555D88 /* AVFoundation.framework */; };
+		859796B01894EFD200555D88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796AF1894EFD200555D88 /* ImageIO.framework */; };
+		859796B21894EFDC00555D88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B11894EFDC00555D88 /* libz.dylib */; };
+		859796B41894EFE200555D88 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B31894EFE200555D88 /* CoreVideo.framework */; };
+		859796B61894EFE800555D88 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B51894EFE800555D88 /* CoreMedia.framework */; };
+		859796C91894FCE300555D88 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 859796C81894FCE300555D88 /* haarcascade_frontalface_alt2.xml */; };
+		859796D31895014E00555D88 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D21895014E00555D88 /* libsqlite3.dylib */; };
+		859796D6189502BE00555D88 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D4189502BE00555D88 /* Accelerate.framework */; };
+		859796D7189502BE00555D88 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D5189502BE00555D88 /* AssetsLibrary.framework */; };
+		859796D9189502CF00555D88 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D8189502CF00555D88 /* QuartzCore.framework */; };
+		859A917E189699E600307DE2 /* FIGCameraFinderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */; };
+		859A917F189699E600307DE2 /* FIGNavigationRootCenterViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A916B189699E600307DE2 /* FIGNavigationRootCenterViewController.mm */; };
+		859A9180189699E600307DE2 /* FIGFaceFinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A916D189699E600307DE2 /* FIGFaceFinderViewController.m */; };
+		859A9181189699E600307DE2 /* FIGNavigationRootLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A916F189699E600307DE2 /* FIGNavigationRootLeftViewController.m */; };
+		859A9182189699E600307DE2 /* FIGNavigationRootRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */; };
+		859A9183189699E600307DE2 /* FIGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A9173189699E600307DE2 /* FIGRootViewController.m */; };
+		859A9184189699E600307DE2 /* FIGCustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9176189699E600307DE2 /* FIGCustomFaceRecognizer.mm */; };
+		859A9185189699E600307DE2 /* FIGFaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9178189699E600307DE2 /* FIGFaceDetector.mm */; };
+		859A9186189699E600307DE2 /* FIGOpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A917A189699E600307DE2 /* FIGOpenCVData.mm */; };
+		859A9187189699E600307DE2 /* FIGOpenCVUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A917C189699E600307DE2 /* FIGOpenCVUtils.mm */; };
+		85C471CB189854200006988C /* FIGAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471CA189854200006988C /* FIGAlbumViewController.m */; };
+		85C471CF1898547E0006988C /* FIGAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471CE1898547E0006988C /* FIGAlbumCollectionViewCell.m */; };
+		85C471D5189857690006988C /* FIGUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471D4189857690006988C /* FIGUICollectionView.m */; };
+		85C471DB18985C5A0006988C /* FIGPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471DA18985C5A0006988C /* FIGPhotoViewController.m */; };
+		85C471DE18986DA00006988C /* FIGAlbumDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471DD18986DA00006988C /* FIGAlbumDetailViewController.m */; };
+		85C471E318986FF80006988C /* AssetsDataIsInaccessibleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471E218986FF80006988C /* AssetsDataIsInaccessibleViewController.m */; };
+		85C471E6189875250006988C /* FIGPhotoDetailViewControllerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471E5189875250006988C /* FIGPhotoDetailViewControllerData.m */; };
+		85C471E9189876CA0006988C /* FIGPhotoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471E8189876CA0006988C /* FIGPhotoPageViewController.m */; };
+		85C471EC189877F40006988C /* FIGImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471EB189877F40006988C /* FIGImageScrollView.m */; };
+		85C471EF189885B80006988C /* FIGPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */; };
+		85E9298E189457CF00DEA293 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E9298D189457CF00DEA293 /* opencv2.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8524624918944F94001315D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8524621B18944F94001315D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8524622218944F94001315D2;
+			remoteInfo = FaceImageGallery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8524622318944F94001315D2 /* FaceImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8524622618944F94001315D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8524622818944F94001315D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8524622A18944F94001315D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8524622E18944F94001315D2 /* FaceImageGallery-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FaceImageGallery-Info.plist"; sourceTree = "<group>"; };
+		8524623018944F94001315D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8524623218944F94001315D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8524623418944F94001315D2 /* FaceImageGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceImageGallery-Prefix.pch"; sourceTree = "<group>"; };
+		8524623518944F94001315D2 /* FIGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIGAppDelegate.h; sourceTree = "<group>"; };
+		8524623618944F94001315D2 /* FIGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIGAppDelegate.m; sourceTree = "<group>"; };
+		8524623918944F94001315D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8524623E18944F94001315D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8524624418944F94001315D2 /* FaceImageGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceImageGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8524624518944F94001315D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8524624D18944F94001315D2 /* FaceImageGalleryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FaceImageGalleryTests-Info.plist"; sourceTree = "<group>"; };
+		8524624F18944F94001315D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8524625118944F94001315D2 /* FaceImageGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceImageGalleryTests.m; sourceTree = "<group>"; };
+		8524625E18945066001315D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8524627118945066001315D2 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		8524627218945066001315D2 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		8524627318945066001315D2 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		8524627418945066001315D2 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		853F8F4A18997EB400477C94 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		853F8F4B18997EB400477C94 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		853F8F501899810500477C94 /* FIGiCarouselAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGiCarouselAlbumViewController.h; sourceTree = "<group>"; };
+		853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGiCarouselAlbumViewController.m; sourceTree = "<group>"; };
+		853F8F531899887E00477C94 /* FIGiCarouselPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGiCarouselPhotoViewController.h; sourceTree = "<group>"; };
+		853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGiCarouselPhotoViewController.m; sourceTree = "<group>"; };
+		859796AC1894EFCB00555D88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		859796AF1894EFD200555D88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		859796B11894EFDC00555D88 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		859796B31894EFE200555D88 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		859796B51894EFE800555D88 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		859796C81894FCE300555D88 /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_frontalface_alt2.xml; path = ../../../FaceRecognition/FaceRecognition/haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
+		859796D21895014E00555D88 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		859796D4189502BE00555D88 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		859796D5189502BE00555D88 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		859796D8189502CF00555D88 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		859A9168189699E600307DE2 /* FIGCameraFinderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGCameraFinderViewController.h; sourceTree = "<group>"; };
+		859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGCameraFinderViewController.mm; sourceTree = "<group>"; };
+		859A916A189699E600307DE2 /* FIGNavigationRootCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGNavigationRootCenterViewController.h; sourceTree = "<group>"; };
+		859A916B189699E600307DE2 /* FIGNavigationRootCenterViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGNavigationRootCenterViewController.mm; sourceTree = "<group>"; };
+		859A916C189699E600307DE2 /* FIGFaceFinderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGFaceFinderViewController.h; sourceTree = "<group>"; };
+		859A916D189699E600307DE2 /* FIGFaceFinderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGFaceFinderViewController.m; sourceTree = "<group>"; };
+		859A916E189699E600307DE2 /* FIGNavigationRootLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGNavigationRootLeftViewController.h; sourceTree = "<group>"; };
+		859A916F189699E600307DE2 /* FIGNavigationRootLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGNavigationRootLeftViewController.m; sourceTree = "<group>"; };
+		859A9170189699E600307DE2 /* FIGNavigationRootRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGNavigationRootRightViewController.h; sourceTree = "<group>"; };
+		859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGNavigationRootRightViewController.m; sourceTree = "<group>"; };
+		859A9172189699E600307DE2 /* FIGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGRootViewController.h; sourceTree = "<group>"; };
+		859A9173189699E600307DE2 /* FIGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGRootViewController.m; sourceTree = "<group>"; };
+		859A9175189699E600307DE2 /* FIGCustomFaceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGCustomFaceRecognizer.h; sourceTree = "<group>"; };
+		859A9176189699E600307DE2 /* FIGCustomFaceRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGCustomFaceRecognizer.mm; sourceTree = "<group>"; };
+		859A9177189699E600307DE2 /* FIGFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGFaceDetector.h; sourceTree = "<group>"; };
+		859A9178189699E600307DE2 /* FIGFaceDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGFaceDetector.mm; sourceTree = "<group>"; };
+		859A9179189699E600307DE2 /* FIGOpenCVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGOpenCVData.h; sourceTree = "<group>"; };
+		859A917A189699E600307DE2 /* FIGOpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGOpenCVData.mm; sourceTree = "<group>"; };
+		859A917B189699E600307DE2 /* FIGOpenCVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGOpenCVUtils.h; sourceTree = "<group>"; };
+		859A917C189699E600307DE2 /* FIGOpenCVUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGOpenCVUtils.mm; sourceTree = "<group>"; };
+		85C471C9189854200006988C /* FIGAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGAlbumViewController.h; sourceTree = "<group>"; };
+		85C471CA189854200006988C /* FIGAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGAlbumViewController.m; sourceTree = "<group>"; };
+		85C471CD1898547E0006988C /* FIGAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGAlbumCollectionViewCell.h; path = Views/FIGAlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		85C471CE1898547E0006988C /* FIGAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGAlbumCollectionViewCell.m; path = Views/FIGAlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		85C471D3189857690006988C /* FIGUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGUICollectionView.h; path = Views/FIGUICollectionView.h; sourceTree = "<group>"; };
+		85C471D4189857690006988C /* FIGUICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGUICollectionView.m; path = Views/FIGUICollectionView.m; sourceTree = "<group>"; };
+		85C471D918985C5A0006988C /* FIGPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGPhotoViewController.h; sourceTree = "<group>"; };
+		85C471DA18985C5A0006988C /* FIGPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGPhotoViewController.m; sourceTree = "<group>"; };
+		85C471DC18986DA00006988C /* FIGAlbumDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGAlbumDetailViewController.h; sourceTree = "<group>"; };
+		85C471DD18986DA00006988C /* FIGAlbumDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGAlbumDetailViewController.m; sourceTree = "<group>"; };
+		85C471E118986FF80006988C /* AssetsDataIsInaccessibleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsDataIsInaccessibleViewController.h; sourceTree = "<group>"; };
+		85C471E218986FF80006988C /* AssetsDataIsInaccessibleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsDataIsInaccessibleViewController.m; sourceTree = "<group>"; };
+		85C471E4189875250006988C /* FIGPhotoDetailViewControllerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGPhotoDetailViewControllerData.h; sourceTree = "<group>"; };
+		85C471E5189875250006988C /* FIGPhotoDetailViewControllerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGPhotoDetailViewControllerData.m; sourceTree = "<group>"; };
+		85C471E7189876CA0006988C /* FIGPhotoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGPhotoPageViewController.h; sourceTree = "<group>"; };
+		85C471E8189876CA0006988C /* FIGPhotoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGPhotoPageViewController.m; sourceTree = "<group>"; };
+		85C471EA189877F40006988C /* FIGImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGImageScrollView.h; sourceTree = "<group>"; };
+		85C471EB189877F40006988C /* FIGImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGImageScrollView.m; sourceTree = "<group>"; };
+		85C471ED189885B80006988C /* FIGPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGPhotoCollectionViewCell.h; path = Views/FIGPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGPhotoCollectionViewCell.m; path = Views/FIGPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		85E9298D189457CF00DEA293 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Documents/opencv2.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8524622018944F94001315D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859796D9189502CF00555D88 /* QuartzCore.framework in Frameworks */,
+				859796D6189502BE00555D88 /* Accelerate.framework in Frameworks */,
+				859796D7189502BE00555D88 /* AssetsLibrary.framework in Frameworks */,
+				859796D31895014E00555D88 /* libsqlite3.dylib in Frameworks */,
+				859796B61894EFE800555D88 /* CoreMedia.framework in Frameworks */,
+				859796B41894EFE200555D88 /* CoreVideo.framework in Frameworks */,
+				859796B21894EFDC00555D88 /* libz.dylib in Frameworks */,
+				859796B01894EFD200555D88 /* ImageIO.framework in Frameworks */,
+				859796AD1894EFCB00555D88 /* AVFoundation.framework in Frameworks */,
+				85E9298E189457CF00DEA293 /* opencv2.framework in Frameworks */,
+				8524622918944F94001315D2 /* CoreGraphics.framework in Frameworks */,
+				8524622B18944F94001315D2 /* UIKit.framework in Frameworks */,
+				8524622718944F94001315D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8524624118944F94001315D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8524624618944F94001315D2 /* XCTest.framework in Frameworks */,
+				8524624818944F94001315D2 /* UIKit.framework in Frameworks */,
+				8524624718944F94001315D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8524621A18944F94001315D2 = {
+			isa = PBXGroup;
+			children = (
+				8524622C18944F94001315D2 /* FaceImageGallery */,
+				8524624B18944F94001315D2 /* FaceImageGalleryTests */,
+				8524622518944F94001315D2 /* Frameworks */,
+				8524622418944F94001315D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8524622418944F94001315D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8524622318944F94001315D2 /* FaceImageGallery.app */,
+				8524624418944F94001315D2 /* FaceImageGalleryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8524622518944F94001315D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				859796D8189502CF00555D88 /* QuartzCore.framework */,
+				859796D4189502BE00555D88 /* Accelerate.framework */,
+				859796D5189502BE00555D88 /* AssetsLibrary.framework */,
+				859796D21895014E00555D88 /* libsqlite3.dylib */,
+				859796B51894EFE800555D88 /* CoreMedia.framework */,
+				859796B31894EFE200555D88 /* CoreVideo.framework */,
+				859796B11894EFDC00555D88 /* libz.dylib */,
+				859796AF1894EFD200555D88 /* ImageIO.framework */,
+				859796AC1894EFCB00555D88 /* AVFoundation.framework */,
+				85E9298D189457CF00DEA293 /* opencv2.framework */,
+				8524622618944F94001315D2 /* Foundation.framework */,
+				8524622818944F94001315D2 /* CoreGraphics.framework */,
+				8524622A18944F94001315D2 /* UIKit.framework */,
+				8524624518944F94001315D2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8524622C18944F94001315D2 /* FaceImageGallery */ = {
+			isa = PBXGroup;
+			children = (
+				85C471D0189854A60006988C /* Views */,
+				859A9167189699E600307DE2 /* Controllers */,
+				859A9174189699E600307DE2 /* FaceRecognizer */,
+				859A917D189699E600307DE2 /* Models */,
+				8524625B18945066001315D2 /* Vendor */,
+				8524623518944F94001315D2 /* FIGAppDelegate.h */,
+				8524623618944F94001315D2 /* FIGAppDelegate.m */,
+				8524623818944F94001315D2 /* Main.storyboard */,
+				8524623E18944F94001315D2 /* Images.xcassets */,
+				8524622D18944F94001315D2 /* Supporting Files */,
+			);
+			path = FaceImageGallery;
+			sourceTree = "<group>";
+		};
+		8524622D18944F94001315D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				859796C81894FCE300555D88 /* haarcascade_frontalface_alt2.xml */,
+				8524622E18944F94001315D2 /* FaceImageGallery-Info.plist */,
+				8524622F18944F94001315D2 /* InfoPlist.strings */,
+				8524623218944F94001315D2 /* main.m */,
+				8524623418944F94001315D2 /* FaceImageGallery-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8524624B18944F94001315D2 /* FaceImageGalleryTests */ = {
+			isa = PBXGroup;
+			children = (
+				8524625118944F94001315D2 /* FaceImageGalleryTests.m */,
+				8524624C18944F94001315D2 /* Supporting Files */,
+			);
+			path = FaceImageGalleryTests;
+			sourceTree = "<group>";
+		};
+		8524624C18944F94001315D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8524624D18944F94001315D2 /* FaceImageGalleryTests-Info.plist */,
+				8524624E18944F94001315D2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8524625B18945066001315D2 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				853F8F4918997EB400477C94 /* iCarousel */,
+				8524625C18945066001315D2 /* JASidePanels */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		8524625C18945066001315D2 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				8524625E18945066001315D2 /* Default-568h@2x.png */,
+				8524625F18945066001315D2 /* JASidePanels */,
+			);
+			path = JASidePanels;
+			sourceTree = "<group>";
+		};
+		8524625F18945066001315D2 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				8524627018945066001315D2 /* Source */,
+			);
+			path = JASidePanels;
+			sourceTree = "<group>";
+		};
+		8524627018945066001315D2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8524627118945066001315D2 /* JASidePanelController.h */,
+				8524627218945066001315D2 /* JASidePanelController.m */,
+				8524627318945066001315D2 /* UIViewController+JASidePanel.h */,
+				8524627418945066001315D2 /* UIViewController+JASidePanel.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		853F8F4918997EB400477C94 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				853F8F4A18997EB400477C94 /* iCarousel.h */,
+				853F8F4B18997EB400477C94 /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		853F8F4F189980E700477C94 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				853F8F501899810500477C94 /* FIGiCarouselAlbumViewController.h */,
+				853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */,
+				853F8F531899887E00477C94 /* FIGiCarouselPhotoViewController.h */,
+				853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		859A9167189699E600307DE2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				853F8F4F189980E700477C94 /* iCarousel */,
+				85C471E018986FC40006988C /* Common */,
+				85C471DF18986DA50006988C /* Album */,
+				859A9168189699E600307DE2 /* FIGCameraFinderViewController.h */,
+				859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */,
+				859A916C189699E600307DE2 /* FIGFaceFinderViewController.h */,
+				859A916D189699E600307DE2 /* FIGFaceFinderViewController.m */,
+				859A916A189699E600307DE2 /* FIGNavigationRootCenterViewController.h */,
+				859A916B189699E600307DE2 /* FIGNavigationRootCenterViewController.mm */,
+				859A916E189699E600307DE2 /* FIGNavigationRootLeftViewController.h */,
+				859A916F189699E600307DE2 /* FIGNavigationRootLeftViewController.m */,
+				859A9170189699E600307DE2 /* FIGNavigationRootRightViewController.h */,
+				859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */,
+				859A9172189699E600307DE2 /* FIGRootViewController.h */,
+				859A9173189699E600307DE2 /* FIGRootViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		859A9174189699E600307DE2 /* FaceRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				859A9175189699E600307DE2 /* FIGCustomFaceRecognizer.h */,
+				859A9176189699E600307DE2 /* FIGCustomFaceRecognizer.mm */,
+				859A9177189699E600307DE2 /* FIGFaceDetector.h */,
+				859A9178189699E600307DE2 /* FIGFaceDetector.mm */,
+				859A9179189699E600307DE2 /* FIGOpenCVData.h */,
+				859A917A189699E600307DE2 /* FIGOpenCVData.mm */,
+				859A917B189699E600307DE2 /* FIGOpenCVUtils.h */,
+				859A917C189699E600307DE2 /* FIGOpenCVUtils.mm */,
+			);
+			path = FaceRecognizer;
+			sourceTree = "<group>";
+		};
+		859A917D189699E600307DE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85C471D0189854A60006988C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85C471CD1898547E0006988C /* FIGAlbumCollectionViewCell.h */,
+				85C471CE1898547E0006988C /* FIGAlbumCollectionViewCell.m */,
+				85C471D3189857690006988C /* FIGUICollectionView.h */,
+				85C471D4189857690006988C /* FIGUICollectionView.m */,
+				85C471ED189885B80006988C /* FIGPhotoCollectionViewCell.h */,
+				85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		85C471DF18986DA50006988C /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				85C471C9189854200006988C /* FIGAlbumViewController.h */,
+				85C471CA189854200006988C /* FIGAlbumViewController.m */,
+				85C471DC18986DA00006988C /* FIGAlbumDetailViewController.h */,
+				85C471DD18986DA00006988C /* FIGAlbumDetailViewController.m */,
+				85C471D918985C5A0006988C /* FIGPhotoViewController.h */,
+				85C471DA18985C5A0006988C /* FIGPhotoViewController.m */,
+				85C471E4189875250006988C /* FIGPhotoDetailViewControllerData.h */,
+				85C471E5189875250006988C /* FIGPhotoDetailViewControllerData.m */,
+				85C471E7189876CA0006988C /* FIGPhotoPageViewController.h */,
+				85C471E8189876CA0006988C /* FIGPhotoPageViewController.m */,
+				85C471EA189877F40006988C /* FIGImageScrollView.h */,
+				85C471EB189877F40006988C /* FIGImageScrollView.m */,
+			);
+			name = Album;
+			sourceTree = "<group>";
+		};
+		85C471E018986FC40006988C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				85C471E118986FF80006988C /* AssetsDataIsInaccessibleViewController.h */,
+				85C471E218986FF80006988C /* AssetsDataIsInaccessibleViewController.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8524622218944F94001315D2 /* FaceImageGallery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8524625518944F94001315D2 /* Build configuration list for PBXNativeTarget "FaceImageGallery" */;
+			buildPhases = (
+				8524621F18944F94001315D2 /* Sources */,
+				8524622018944F94001315D2 /* Frameworks */,
+				8524622118944F94001315D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaceImageGallery;
+			productName = FaceImageGallery;
+			productReference = 8524622318944F94001315D2 /* FaceImageGallery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8524624318944F94001315D2 /* FaceImageGalleryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8524625818944F94001315D2 /* Build configuration list for PBXNativeTarget "FaceImageGalleryTests" */;
+			buildPhases = (
+				8524624018944F94001315D2 /* Sources */,
+				8524624118944F94001315D2 /* Frameworks */,
+				8524624218944F94001315D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8524624A18944F94001315D2 /* PBXTargetDependency */,
+			);
+			name = FaceImageGalleryTests;
+			productName = FaceImageGalleryTests;
+			productReference = 8524624418944F94001315D2 /* FaceImageGalleryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8524621B18944F94001315D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FIG;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = com.heraysoft;
+				TargetAttributes = {
+					8524622218944F94001315D2 = {
+						DevelopmentTeam = 8XH2AD9UC7;
+					};
+					8524624318944F94001315D2 = {
+						TestTargetID = 8524622218944F94001315D2;
+					};
+				};
+			};
+			buildConfigurationList = 8524621E18944F94001315D2 /* Build configuration list for PBXProject "FaceImageGallery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8524621A18944F94001315D2;
+			productRefGroup = 8524622418944F94001315D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8524622218944F94001315D2 /* FaceImageGallery */,
+				8524624318944F94001315D2 /* FaceImageGalleryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8524622118944F94001315D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859796C91894FCE300555D88 /* haarcascade_frontalface_alt2.xml in Resources */,
+				8524623F18944F94001315D2 /* Images.xcassets in Resources */,
+				8524623118944F94001315D2 /* InfoPlist.strings in Resources */,
+				8524627A18945066001315D2 /* Default-568h@2x.png in Resources */,
+				8524623A18944F94001315D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8524624218944F94001315D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8524625018944F94001315D2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8524621F18944F94001315D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859A9180189699E600307DE2 /* FIGFaceFinderViewController.m in Sources */,
+				8524623318944F94001315D2 /* main.m in Sources */,
+				859A9185189699E600307DE2 /* FIGFaceDetector.mm in Sources */,
+				85C471E9189876CA0006988C /* FIGPhotoPageViewController.m in Sources */,
+				85C471EF189885B80006988C /* FIGPhotoCollectionViewCell.m in Sources */,
+				85C471DB18985C5A0006988C /* FIGPhotoViewController.m in Sources */,
+				853F8F551899887E00477C94 /* FIGiCarouselPhotoViewController.m in Sources */,
+				859A9182189699E600307DE2 /* FIGNavigationRootRightViewController.m in Sources */,
+				85C471D5189857690006988C /* FIGUICollectionView.m in Sources */,
+				859A9187189699E600307DE2 /* FIGOpenCVUtils.mm in Sources */,
+				859A9183189699E600307DE2 /* FIGRootViewController.m in Sources */,
+				85C471E6189875250006988C /* FIGPhotoDetailViewControllerData.m in Sources */,
+				8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */,
+				85C471E318986FF80006988C /* AssetsDataIsInaccessibleViewController.m in Sources */,
+				85C471CB189854200006988C /* FIGAlbumViewController.m in Sources */,
+				85C471CF1898547E0006988C /* FIGAlbumCollectionViewCell.m in Sources */,
+				859A9184189699E600307DE2 /* FIGCustomFaceRecognizer.mm in Sources */,
+				853F8F4C18997EB400477C94 /* iCarousel.m in Sources */,
+				859A917F189699E600307DE2 /* FIGNavigationRootCenterViewController.mm in Sources */,
+				85C471EC189877F40006988C /* FIGImageScrollView.m in Sources */,
+				8524628318945066001315D2 /* JASidePanelController.m in Sources */,
+				859A917E189699E600307DE2 /* FIGCameraFinderViewController.mm in Sources */,
+				859A9186189699E600307DE2 /* FIGOpenCVData.mm in Sources */,
+				859A9181189699E600307DE2 /* FIGNavigationRootLeftViewController.m in Sources */,
+				8524623718944F94001315D2 /* FIGAppDelegate.m in Sources */,
+				853F8F521899810500477C94 /* FIGiCarouselAlbumViewController.m in Sources */,
+				85C471DE18986DA00006988C /* FIGAlbumDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8524624018944F94001315D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8524625218944F94001315D2 /* FaceImageGalleryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8524624A18944F94001315D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8524622218944F94001315D2 /* FaceImageGallery */;
+			targetProxy = 8524624918944F94001315D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8524622F18944F94001315D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8524623018944F94001315D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8524623818944F94001315D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8524623918944F94001315D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8524624E18944F94001315D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8524624F18944F94001315D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8524625318944F94001315D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8524625418944F94001315D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8524625618944F94001315D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jacky/Documents,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
+				INFOPLIST_FILE = "FaceImageGallery/FaceImageGallery-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8524625718944F94001315D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jacky/Documents,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
+				INFOPLIST_FILE = "FaceImageGallery/FaceImageGallery-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8524625918944F94001315D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FaceImageGallery.app/FaceImageGallery";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FaceImageGalleryTests/FaceImageGalleryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8524625A18944F94001315D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FaceImageGallery.app/FaceImageGallery";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
+				INFOPLIST_FILE = "FaceImageGalleryTests/FaceImageGalleryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8524621E18944F94001315D2 /* Build configuration list for PBXProject "FaceImageGallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8524625318944F94001315D2 /* Debug */,
+				8524625418944F94001315D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8524625518944F94001315D2 /* Build configuration list for PBXNativeTarget "FaceImageGallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8524625618944F94001315D2 /* Debug */,
+				8524625718944F94001315D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8524625818944F94001315D2 /* Build configuration list for PBXNativeTarget "FaceImageGalleryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8524625918944F94001315D2 /* Debug */,
+				8524625A18944F94001315D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8524621B18944F94001315D2 /* Project object */;
+}
