@@ -10,6 +10,7 @@
 #import "iCarousel.h"
 
 @interface FIGiCarouselAlbumViewController : UIViewController<iCarouselDataSource, iCarouselDelegate>
+
 @property (weak, nonatomic) IBOutlet iCarousel *iCarouselView;
 
 @end

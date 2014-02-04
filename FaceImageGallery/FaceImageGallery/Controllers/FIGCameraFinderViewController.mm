@@ -91,6 +91,14 @@
     // self.videoCamera.grayscaleMode = NO;
 }
 
+- (void)photoCamera:(CvPhotoCamera*)photoCamera capturedImage:(UIImage *)image {
+    
+}
+
+
+- (void)photoCameraCancel:(CvPhotoCamera*)photoCamera {
+    
+}
 
 - (void)processImage:(cv::Mat&)image
 {

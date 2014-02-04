@@ -10,12 +10,14 @@
 #import <opencv2/highgui/cap_ios.h>
 #import "FIGOpenCVUtils.h"
 #import "FIGOpenCVData.h"
+#import "TTImageProcessor.h"
 
 @interface FIGNavigationRootCenterViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *previewView;
 @property (weak, nonatomic) IBOutlet UIImageView *faceView;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (nonatomic, strong) TTImageProcessor *processor;
 
 - (IBAction)cameraButtonAction:(UIButton *)sender;
 - (IBAction)selectButtonAction:(UIButton *)sender;
@@ -25,13 +27,26 @@
 
 @implementation FIGNavigationRootCenterViewController
 
+-(TTImageProcessor*) processor {
+    if(!_processor) {
+        _processor = [[TTImageProcessor alloc] init];
+    }
+    
+    return _processor;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    // Custom initialization
+    [self.processLabel setHidden:YES];
+    [self.processBar setHidden:YES];
 }
 
 - (void)viewDidLoad
@@ -85,18 +100,14 @@
     // Save image to disk
     [UIImagePNGRepresentation(newImage) writeToFile:fileName atomically:YES];
     
-    
 }
 
 
 - (void)noFaceToDisplay
 {
-         [self.faceView setImage:nil];
-        self.messageLabel.text = @"No face in image";
- 
+    [self.faceView setImage:nil];
+    self.messageLabel.text = @"No face in image";
 }
-
-
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // Dismiss the picker
@@ -142,5 +153,41 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     //picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     [self presentViewController:picker animated:YES completion:NULL];
+}
+
+-(void)processChanged:(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    if (userInfo) {
+        NSString * info = [userInfo objectForKey:@"info"];
+        NSString * number = [userInfo objectForKey:@"process"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.processLabel.text = [NSString stringWithFormat:@"[%@%%]-[%@]", number, info];
+        });
+        
+    }
+    
+}
+
+- (IBAction)processFaces:(id)sender {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(processChanged:)
+     name:@"ProcessLibrary" object:nil];
+    
+    [self.processLabel setHidden:NO];
+    [self.processBar setHidden:NO];
+    self.processLabel.text = @"0%";
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(queue, ^{
+        [self.processor cleanDatabase];
+        [self.processor processAllLibrary];
+        
+    });
+    
 }
 @end

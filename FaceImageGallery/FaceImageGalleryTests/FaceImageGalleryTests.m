@@ -7,12 +7,22 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "TTImageProcessor.h"
 @interface FaceImageGalleryTests : XCTestCase
+
+@property (nonatomic, strong) TTImageProcessor *processor;
 
 @end
 
 @implementation FaceImageGalleryTests
+
+-(TTImageProcessor*) processor {
+    if(!_processor) {
+        _processor = [[TTImageProcessor alloc] init];
+    }
+    
+    return _processor;
+}
 
 - (void)setUp
 {
@@ -28,7 +38,7 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [self.processor processAllLibrary];
 }
 
 @end

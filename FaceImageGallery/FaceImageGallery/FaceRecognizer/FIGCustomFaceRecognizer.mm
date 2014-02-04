@@ -61,7 +61,7 @@
     return [documentDirectory stringByAppendingPathComponent:@"training-data.sqlite"];
 }
 
-- (int)newPersonWithName:(NSString *)name
+- (NSInteger)newPersonWithName:(NSString *)name
 {
     const char *newPersonSQL = "INSERT INTO people (name) VALUES (?)";
     sqlite3_stmt *statement;
@@ -158,7 +158,7 @@
     
     if (sqlite3_prepare_v2(_db, insertSQL, -1, &statement, nil) == SQLITE_OK) {
         sqlite3_bind_int(statement, 1, personID);
-        sqlite3_bind_blob(statement, 2, serialized.bytes, serialized.length, SQLITE_TRANSIENT);
+        sqlite3_bind_blob(statement, 2, serialized.bytes, (int)serialized.length, SQLITE_TRANSIENT);
         sqlite3_step(statement);
     }
     

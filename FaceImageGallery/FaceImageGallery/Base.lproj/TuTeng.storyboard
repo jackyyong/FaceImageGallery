@@ -71,6 +71,49 @@
             </objects>
             <point key="canvasLocation" x="-282" y="1998"/>
         </scene>
+        <!--Face Collection View Controller-->
+        <scene sceneID="jfG-Kk-u3G">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="QBB-wS-TfK" customClass="TTFaceCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="orv-3p-mae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nAx-2h-XHI">
+                            <size key="itemSize" width="109" height="114"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4KG-Ji-Q4O" customClass="TTFaceUICollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="109" height="114"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="109" height="114"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46a-1p-Fk4">
+                                            <rect key="frame" x="0.0" y="0.0" width="109" height="114"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="faceView" destination="46a-1p-Fk4" id="DqL-9d-fkr"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="QBB-wS-TfK" id="GSO-jT-K3T"/>
+                            <outlet property="delegate" destination="QBB-wS-TfK" id="Z6d-GC-EPs"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avv-LG-vo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="267" y="1371"/>
+        </scene>
         <!--Gi Carousel Album View Controller-->
         <scene sceneID="hmH-O0-eaC">
             <objects>
@@ -83,6 +126,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="nmQ-gR-gYk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="533"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUL-25-8wD" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,10 +139,6 @@
                                     <outlet property="delegate" destination="wsg-oH-F8p" id="1cx-Pk-fwD"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="nmQ-gR-gYk">
-                                <rect key="frame" x="0.0" y="64" width="320" height="533"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -106,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tv3-gO-PxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307" y="102"/>
+            <point key="canvasLocation" x="1231" y="-146"/>
         </scene>
         <!--Gi Carousel Photo View Controller-->
         <scene sceneID="NQp-I4-jbl">
@@ -116,7 +159,7 @@
                         <viewControllerLayoutGuide type="top" id="2MH-hI-DYm"/>
                         <viewControllerLayoutGuide type="bottom" id="OAX-eP-qBI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pAQ-JA-2rb">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pAQ-JA-2rb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -128,10 +171,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtq-Br-Hue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811" y="99"/>
+            <point key="canvasLocation" x="1747" y="-17"/>
         </scene>
         <!--Camera Finder View Controller - Camera Finder-->
         <scene sceneID="EAx-gB-LBh">
@@ -208,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTg-X8-q2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="850"/>
+            <point key="canvasLocation" x="2161" y="814"/>
         </scene>
         <!--Assets Data Is Inaccessible View Controller-->
         <scene sceneID="AJL-vu-24h">
@@ -239,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INI-UV-o3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="-238"/>
+            <point key="canvasLocation" x="-118" y="-238"/>
         </scene>
         <!--Album View Controller-->
         <scene sceneID="ibU-RW-T10">
@@ -299,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAU-sz-wqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="1603"/>
+            <point key="canvasLocation" x="1509" y="1607"/>
         </scene>
         <!--Album Detail View Controller-->
         <scene sceneID="sjX-Zm-dLa">
@@ -345,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxF-zi-d7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="1603"/>
+            <point key="canvasLocation" x="2202" y="1607"/>
         </scene>
         <!--Photo Page View Controller-->
         <scene sceneID="ZV2-Xk-CL9">
@@ -355,7 +399,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXP-b5-cEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520" y="1603"/>
+            <point key="canvasLocation" x="2766" y="1607"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c0L-1I-WoV">
@@ -433,11 +477,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tzH-aV-5Jw">
-                                <rect key="frame" x="0.0" y="64" width="320" height="408"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="382"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pV-1D-xIq">
-                                <rect key="frame" x="14" y="474" width="43" height="30"/>
+                                <rect key="frame" x="5" y="447" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -447,7 +491,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTR-wR-28X">
-                                <rect key="frame" x="79" y="474" width="54" height="30"/>
+                                <rect key="frame" x="61" y="447" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -461,13 +505,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-FP-09R">
-                                <rect key="frame" x="5" y="445" width="278" height="21"/>
+                                <rect key="frame" x="5" y="418" width="278" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25v-5g-f9F">
-                                <rect key="frame" x="161" y="474" width="44" height="30"/>
+                                <rect key="frame" x="122" y="447" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Album">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -477,7 +521,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGT-pa-HvZ">
-                                <rect key="frame" x="220" y="474" width="65" height="30"/>
+                                <rect key="frame" x="174" y="447" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="iCarousel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -485,6 +529,34 @@
                                 <connections>
                                     <segue destination="wsg-oH-F8p" kind="push" identifier="showAlbumDetailFromiCarousel" id="ptm-ab-I3j"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-TF-tBR">
+                                <rect key="frame" x="250" y="447" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="processFaces:" destination="5V0-qA-fGK" eventType="touchUpInside" id="ieD-S5-0uC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivS-sM-mmi">
+                                <rect key="frame" x="8" y="490" width="292" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4SL-34-2md">
+                                <rect key="frame" x="8" y="485" width="292" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFV-Z1-yvt">
+                                <rect key="frame" x="243" y="533" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -494,11 +566,13 @@
                         <outlet property="faceView" destination="39g-iO-zR7" id="vqv-wr-60p"/>
                         <outlet property="messageLabel" destination="HmL-FP-09R" id="Vmo-Cd-apj"/>
                         <outlet property="previewView" destination="tzH-aV-5Jw" id="RbS-Dv-ohC"/>
+                        <outlet property="processBar" destination="4SL-34-2md" id="axC-BR-TsK"/>
+                        <outlet property="processLabel" destination="ivS-sM-mmi" id="iSf-Uv-L69"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fh-PP-wBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="502"/>
+            <point key="canvasLocation" x="258" y="502"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5qG-G3-VS2">
@@ -513,7 +587,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxr-Ae-DLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-784" y="502"/>
+            <point key="canvasLocation" x="-460" y="502"/>
         </scene>
     </scenes>
     <resources>

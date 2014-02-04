@@ -8,107 +8,93 @@
 
 #import "FIGAlbumViewController.h"
 #import "FIGAlbumDetailViewController.h"
-#include <AssetsLibrary/AssetsLibrary.h> 
 #import "AssetsDataIsInaccessibleViewController.h"
 #import "FIGAlbumCollectionViewCell.h"
+#import "FIGAlbumReader.h"
 
 @interface FIGAlbumViewController ()
 
-@property (nonatomic, strong) ALAssetsLibrary *assetsLibrary;
-@property (nonatomic, strong) NSMutableArray *groups;
+@property (nonatomic, strong) FIGAlbumReader *reader;
 
 @end
 
 
 @implementation FIGAlbumViewController
 
--(ALAssetsLibrary *) assetsLibrary{
-    if (!_assetsLibrary) {
-        _assetsLibrary = [[ALAssetsLibrary alloc] init];
+-(FIGAlbumReader*) reader {
+    if(!_reader) {
+        _reader = [[FIGAlbumReader alloc] init];
     }
-    return _assetsLibrary;
+    
+    return _reader;
 }
 
--(NSMutableArray *) groups{
-    if (!_groups) {
-        _groups = [[NSMutableArray alloc] init];
-    }
-    return _groups;
-}
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return self.groups.count;
+    return [self.reader getAlbumCount];
 }
 
-#define kImageViewTag 1 // the image view inside the collection view cell prototype is tagged with "1"
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    FIGAlbumInfo* albumInfo = [self.reader getAlbumInfoAtIndex:indexPath.row];
     
-    static NSString *CellIdentifier = @"albumCell";
-    
-    FIGAlbumCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    ALAssetsGroup *groupForCell = self.groups[indexPath.row];
-    CGImageRef posterImageRef = [groupForCell posterImage];
-    UIImage *posterImage = [UIImage imageWithCGImage:posterImageRef];
-    
-    cell.imageView.image = posterImage;
-    cell.imageLabel.text = [groupForCell valueForProperty:ALAssetsGroupPropertyName];
-    cell.detailTextLabel.text = [@(groupForCell.numberOfAssets) stringValue];
-    
-    return cell;
+    if (albumInfo) {
+        static NSString *CellIdentifier = @"albumCell";
+        
+        FIGAlbumCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        UIImage *posterImage = [UIImage imageWithCGImage:albumInfo.posterImage];
+        
+        cell.imageView.image = posterImage;
+        cell.imageLabel.text = albumInfo.albumName;
+        cell.detailTextLabel.text = [@(albumInfo.numberOfPhotos) stringValue];
+         return cell;
+    }
+   
+    return nil;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+	if([self.reader getAlbumCount] > 0) {
+        [self.reader removeAllAlbums];
+    }
+    
+    [self.reader readAlbums];
+    
 }
+
+- (void)whenReaderFailture:(NSError *)error {
+    AssetsDataIsInaccessibleViewController *assetsDataInaccessibleViewController =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"assetsDataIsInaccessibleViewController"];
+    
+    NSString *errorMessage = nil;
+    switch ([error code]) {
+        case ALAssetsLibraryAccessUserDeniedError:
+        case ALAssetsLibraryAccessGloballyDeniedError:
+            errorMessage = @"The user has declined access to it.";
+            break;
+        default:
+            errorMessage = @"Reason unknown.";
+            break;
+    }
+    
+    assetsDataInaccessibleViewController.explanation = errorMessage;
+    [self presentViewController:assetsDataInaccessibleViewController animated:NO completion:nil];
+}
+
+- (void)whenReaderSuccess {
+    [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	if([self.groups count] > 0) {
-        [self.groups removeAllObjects];
-    }
     
-    // setup our failure view controller in case enumerateGroupsWithTypes fails
-    ALAssetsLibraryAccessFailureBlock failureBlock = ^(NSError *error) {
-        AssetsDataIsInaccessibleViewController *assetsDataInaccessibleViewController =
-        [self.storyboard instantiateViewControllerWithIdentifier:@"assetsDataIsInaccessibleViewController"];
-        
-        NSString *errorMessage = nil;
-        switch ([error code]) {
-            case ALAssetsLibraryAccessUserDeniedError:
-            case ALAssetsLibraryAccessGloballyDeniedError:
-                errorMessage = @"The user has declined access to it.";
-                break;
-            default:
-                errorMessage = @"Reason unknown.";
-                break;
-        }
-        
-        assetsDataInaccessibleViewController.explanation = errorMessage;
-        [self presentViewController:assetsDataInaccessibleViewController animated:NO completion:nil];
-    };
-    
-    // emumerate through our groups and only add groups that contain photos
-    ALAssetsLibraryGroupsEnumerationResultsBlock listGroupBlock = ^(ALAssetsGroup *group, BOOL *stop) {
-        ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
-        [group setAssetsFilter:onlyPhotosFilter];
-        if ([group numberOfAssets] > 0)
-        {
-            [self.groups addObject:group];
-        }
-        else
-        {
-            [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-        }
-    };
-    
-    // enumerate only photos
-    NSUInteger groupTypes = ALAssetsGroupAlbum | ALAssetsGroupEvent | ALAssetsGroupFaces | ALAssetsGroupSavedPhotos;
-    [self.assetsLibrary enumerateGroupsWithTypes:groupTypes usingBlock:listGroupBlock failureBlock:failureBlock];
+    [self.reader setDelegate:self];
 }
 
 
@@ -118,11 +104,11 @@
         
         NSIndexPath *selectedCell = [self.collectionView indexPathsForSelectedItems][0];
         
-        if (self.groups.count > (NSUInteger)selectedCell.row) {
+        if ([self.reader getAlbumCount] > (NSUInteger)selectedCell.row) {
             
             // hand off the asset group (i.e. album) to the next view controller
             FIGAlbumDetailViewController *albumDetailViewController = [segue destinationViewController];
-            albumDetailViewController.assetsGroup = self.groups[selectedCell.row];
+            albumDetailViewController.albumInfo = [self.reader getAlbumInfoAtIndex: selectedCell.row];
         }
         
         

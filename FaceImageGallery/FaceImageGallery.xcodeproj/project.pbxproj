@@ -13,7 +13,7 @@
 		8524623118944F94001315D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8524622F18944F94001315D2 /* InfoPlist.strings */; };
 		8524623318944F94001315D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524623218944F94001315D2 /* main.m */; };
 		8524623718944F94001315D2 /* FIGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524623618944F94001315D2 /* FIGAppDelegate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		8524623A18944F94001315D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8524623818944F94001315D2 /* Main.storyboard */; };
+		8524623A18944F94001315D2 /* TuTeng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8524623818944F94001315D2 /* TuTeng.storyboard */; };
 		8524623F18944F94001315D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8524623E18944F94001315D2 /* Images.xcassets */; };
 		8524624618944F94001315D2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524624518944F94001315D2 /* XCTest.framework */; };
 		8524624718944F94001315D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622618944F94001315D2 /* Foundation.framework */; };
@@ -23,9 +23,21 @@
 		8524627A18945066001315D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8524625E18945066001315D2 /* Default-568h@2x.png */; };
 		8524628318945066001315D2 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627218945066001315D2 /* JASidePanelController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627418945066001315D2 /* UIViewController+JASidePanel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		85292DCA18A1591F00A670A2 /* TTFaceCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85292DC918A1591F00A670A2 /* TTFaceCollectionViewController.m */; };
+		85292DCD18A159C100A670A2 /* TTFaceUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85292DCC18A159C100A670A2 /* TTFaceUICollectionViewCell.m */; };
 		853F8F4C18997EB400477C94 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F4B18997EB400477C94 /* iCarousel.m */; };
 		853F8F521899810500477C94 /* FIGiCarouselAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */; };
 		853F8F551899887E00477C94 /* FIGiCarouselPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */; };
+		8572E7DE189FB15B001A9BD9 /* TTFacesReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7DD189FB15B001A9BD9 /* TTFacesReader.m */; };
+		8572E7E2189FB46D001A9BD9 /* TTFaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7E1189FB46D001A9BD9 /* TTFaceInfo.m */; };
+		8572E7E5189FB54C001A9BD9 /* TTFaceModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7E4189FB54C001A9BD9 /* TTFaceModel.mm */; };
+		8572E7E8189FBB10001A9BD9 /* TTPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7E7189FBB10001A9BD9 /* TTPersonInfo.m */; };
+		8572E7EC189FBFD7001A9BD9 /* TTOpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7EB189FBFD7001A9BD9 /* TTOpenCVData.mm */; };
+		8572E7EF189FC2E5001A9BD9 /* TTImageProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7EE189FC2E5001A9BD9 /* TTImageProcessor.mm */; };
+		8572E7F1189FC873001A9BD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8572E7F0189FC873001A9BD9 /* CoreLocation.framework */; };
+		8572E7F4189FCA9A001A9BD9 /* TTPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7F3189FCA9A001A9BD9 /* TTPhotoInfo.m */; };
+		8572E7F718A03167001A9BD9 /* TTFaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7F618A03167001A9BD9 /* TTFaceDetector.mm */; };
+		857BFBC9189C9B100088C645 /* FIGPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 857BFBC8189C9B100088C645 /* FIGPhotoInfo.m */; };
 		859796AD1894EFCB00555D88 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796AC1894EFCB00555D88 /* AVFoundation.framework */; };
 		859796B01894EFD200555D88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796AF1894EFD200555D88 /* ImageIO.framework */; };
 		859796B21894EFDC00555D88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B11894EFDC00555D88 /* libz.dylib */; };
@@ -56,7 +68,12 @@
 		85C471E9189876CA0006988C /* FIGPhotoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471E8189876CA0006988C /* FIGPhotoPageViewController.m */; };
 		85C471EC189877F40006988C /* FIGImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471EB189877F40006988C /* FIGImageScrollView.m */; };
 		85C471EF189885B80006988C /* FIGPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */; };
-		85E9298E189457CF00DEA293 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E9298D189457CF00DEA293 /* opencv2.framework */; };
+		85CC6AB7189BBF500027BDF4 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CC6AB6189BBF500027BDF4 /* opencv2.framework */; };
+		85CC6AC3189BC1E60027BDF4 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6AC0189BC1E60027BDF4 /* FXImageView.m */; };
+		85CC6AC4189BC1E60027BDF4 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6AC2189BC1E60027BDF4 /* UIImage+FX.m */; };
+		85CC6AC8189BC2110027BDF4 /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6AC7189BC2110027BDF4 /* ReflectionView.m */; };
+		85CC6ACC189C05AF0027BDF4 /* FIGAlbumReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6ACB189C05AF0027BDF4 /* FIGAlbumReader.m */; };
+		85CC6AD0189C07810027BDF4 /* FIGAlbumInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6ACF189C07810027BDF4 /* FIGAlbumInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +97,7 @@
 		8524623418944F94001315D2 /* FaceImageGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceImageGallery-Prefix.pch"; sourceTree = "<group>"; };
 		8524623518944F94001315D2 /* FIGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIGAppDelegate.h; sourceTree = "<group>"; };
 		8524623618944F94001315D2 /* FIGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIGAppDelegate.m; sourceTree = "<group>"; };
-		8524623918944F94001315D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8524623918944F94001315D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuTeng.storyboard; sourceTree = "<group>"; };
 		8524623E18944F94001315D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8524624418944F94001315D2 /* FaceImageGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceImageGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8524624518944F94001315D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,12 +109,35 @@
 		8524627218945066001315D2 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		8524627318945066001315D2 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
 		8524627418945066001315D2 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		85292DC818A1591F00A670A2 /* TTFaceCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFaceCollectionViewController.h; sourceTree = "<group>"; };
+		85292DC918A1591F00A670A2 /* TTFaceCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFaceCollectionViewController.m; sourceTree = "<group>"; };
+		85292DCB18A159C100A670A2 /* TTFaceUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceUICollectionViewCell.h; path = FaceImageGallery/Views/TTFaceUICollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		85292DCC18A159C100A670A2 /* TTFaceUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTFaceUICollectionViewCell.m; path = FaceImageGallery/Views/TTFaceUICollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		853F8F4A18997EB400477C94 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		853F8F4B18997EB400477C94 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		853F8F501899810500477C94 /* FIGiCarouselAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGiCarouselAlbumViewController.h; sourceTree = "<group>"; };
 		853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGiCarouselAlbumViewController.m; sourceTree = "<group>"; };
 		853F8F531899887E00477C94 /* FIGiCarouselPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGiCarouselPhotoViewController.h; sourceTree = "<group>"; };
 		853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGiCarouselPhotoViewController.m; sourceTree = "<group>"; };
+		8572E7DC189FB15B001A9BD9 /* TTFacesReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFacesReader.h; sourceTree = "<group>"; };
+		8572E7DD189FB15B001A9BD9 /* TTFacesReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFacesReader.m; sourceTree = "<group>"; };
+		8572E7E0189FB46D001A9BD9 /* TTFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceInfo.h; path = Models/TTFaceInfo.h; sourceTree = "<group>"; };
+		8572E7E1189FB46D001A9BD9 /* TTFaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTFaceInfo.m; path = Models/TTFaceInfo.m; sourceTree = "<group>"; };
+		8572E7E3189FB54C001A9BD9 /* TTFaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceModel.h; path = Models/TTFaceModel.h; sourceTree = "<group>"; };
+		8572E7E4189FB54C001A9BD9 /* TTFaceModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTFaceModel.mm; path = Models/TTFaceModel.mm; sourceTree = "<group>"; };
+		8572E7E6189FBB10001A9BD9 /* TTPersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPersonInfo.h; path = Models/TTPersonInfo.h; sourceTree = "<group>"; };
+		8572E7E7189FBB10001A9BD9 /* TTPersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTPersonInfo.m; path = Models/TTPersonInfo.m; sourceTree = "<group>"; };
+		8572E7EA189FBFD7001A9BD9 /* TTOpenCVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTOpenCVData.h; path = Models/TTOpenCVData.h; sourceTree = "<group>"; };
+		8572E7EB189FBFD7001A9BD9 /* TTOpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTOpenCVData.mm; path = Models/TTOpenCVData.mm; sourceTree = "<group>"; };
+		8572E7ED189FC2E5001A9BD9 /* TTImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTImageProcessor.h; path = Models/TTImageProcessor.h; sourceTree = "<group>"; };
+		8572E7EE189FC2E5001A9BD9 /* TTImageProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTImageProcessor.mm; path = Models/TTImageProcessor.mm; sourceTree = "<group>"; };
+		8572E7F0189FC873001A9BD9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8572E7F2189FCA9A001A9BD9 /* TTPhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPhotoInfo.h; path = Models/TTPhotoInfo.h; sourceTree = "<group>"; };
+		8572E7F3189FCA9A001A9BD9 /* TTPhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTPhotoInfo.m; path = Models/TTPhotoInfo.m; sourceTree = "<group>"; };
+		8572E7F518A03167001A9BD9 /* TTFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceDetector.h; path = Models/TTFaceDetector.h; sourceTree = "<group>"; };
+		8572E7F618A03167001A9BD9 /* TTFaceDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTFaceDetector.mm; path = Models/TTFaceDetector.mm; sourceTree = "<group>"; };
+		857BFBC7189C9B100088C645 /* FIGPhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGPhotoInfo.h; path = Models/FIGPhotoInfo.h; sourceTree = "<group>"; };
+		857BFBC8189C9B100088C645 /* FIGPhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGPhotoInfo.m; path = Models/FIGPhotoInfo.m; sourceTree = "<group>"; };
 		859796AC1894EFCB00555D88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		859796AF1894EFD200555D88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		859796B11894EFDC00555D88 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -148,7 +188,18 @@
 		85C471EB189877F40006988C /* FIGImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGImageScrollView.m; sourceTree = "<group>"; };
 		85C471ED189885B80006988C /* FIGPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGPhotoCollectionViewCell.h; path = Views/FIGPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGPhotoCollectionViewCell.m; path = Views/FIGPhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		85E9298D189457CF00DEA293 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Documents/opencv2.framework; sourceTree = "<group>"; };
+		85CC6AB6189BBF500027BDF4 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		85CC6ABF189BC1E60027BDF4 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXImageView.h; path = FXImageView/FXImageView.h; sourceTree = "<group>"; };
+		85CC6AC0189BC1E60027BDF4 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXImageView.m; path = FXImageView/FXImageView.m; sourceTree = "<group>"; };
+		85CC6AC1189BC1E60027BDF4 /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FX.h"; path = "FXImageView/UIImage+FX.h"; sourceTree = "<group>"; };
+		85CC6AC2189BC1E60027BDF4 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FX.m"; path = "FXImageView/UIImage+FX.m"; sourceTree = "<group>"; };
+		85CC6AC6189BC2110027BDF4 /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
+		85CC6AC7189BC2110027BDF4 /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
+		85CC6ACA189C05AF0027BDF4 /* FIGAlbumReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGAlbumReader.h; path = Models/FIGAlbumReader.h; sourceTree = "<group>"; };
+		85CC6ACB189C05AF0027BDF4 /* FIGAlbumReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGAlbumReader.m; path = Models/FIGAlbumReader.m; sourceTree = "<group>"; };
+		85CC6ACE189C07810027BDF4 /* FIGAlbumInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGAlbumInfo.h; path = Models/FIGAlbumInfo.h; sourceTree = "<group>"; };
+		85CC6ACF189C07810027BDF4 /* FIGAlbumInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGAlbumInfo.m; path = Models/FIGAlbumInfo.m; sourceTree = "<group>"; };
+		9404221293FF4CCAAE21F44B /* Pods-FaceImageGalleryTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceImageGalleryTests.xcconfig"; path = "Pods/Pods-FaceImageGalleryTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,16 +207,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8572E7F1189FC873001A9BD9 /* CoreLocation.framework in Frameworks */,
 				859796D9189502CF00555D88 /* QuartzCore.framework in Frameworks */,
 				859796D6189502BE00555D88 /* Accelerate.framework in Frameworks */,
 				859796D7189502BE00555D88 /* AssetsLibrary.framework in Frameworks */,
 				859796D31895014E00555D88 /* libsqlite3.dylib in Frameworks */,
 				859796B61894EFE800555D88 /* CoreMedia.framework in Frameworks */,
+				85CC6AB7189BBF500027BDF4 /* opencv2.framework in Frameworks */,
 				859796B41894EFE200555D88 /* CoreVideo.framework in Frameworks */,
 				859796B21894EFDC00555D88 /* libz.dylib in Frameworks */,
 				859796B01894EFD200555D88 /* ImageIO.framework in Frameworks */,
 				859796AD1894EFCB00555D88 /* AVFoundation.framework in Frameworks */,
-				85E9298E189457CF00DEA293 /* opencv2.framework in Frameworks */,
 				8524622918944F94001315D2 /* CoreGraphics.framework in Frameworks */,
 				8524622B18944F94001315D2 /* UIKit.framework in Frameworks */,
 				8524622718944F94001315D2 /* Foundation.framework in Frameworks */,
@@ -192,6 +244,7 @@
 				8524624B18944F94001315D2 /* FaceImageGalleryTests */,
 				8524622518944F94001315D2 /* Frameworks */,
 				8524622418944F94001315D2 /* Products */,
+				9404221293FF4CCAAE21F44B /* Pods-FaceImageGalleryTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +260,8 @@
 		8524622518944F94001315D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8572E7F0189FC873001A9BD9 /* CoreLocation.framework */,
+				85CC6AB6189BBF500027BDF4 /* opencv2.framework */,
 				859796D8189502CF00555D88 /* QuartzCore.framework */,
 				859796D4189502BE00555D88 /* Accelerate.framework */,
 				859796D5189502BE00555D88 /* AssetsLibrary.framework */,
@@ -216,7 +271,6 @@
 				859796B11894EFDC00555D88 /* libz.dylib */,
 				859796AF1894EFD200555D88 /* ImageIO.framework */,
 				859796AC1894EFCB00555D88 /* AVFoundation.framework */,
-				85E9298D189457CF00DEA293 /* opencv2.framework */,
 				8524622618944F94001315D2 /* Foundation.framework */,
 				8524622818944F94001315D2 /* CoreGraphics.framework */,
 				8524622A18944F94001315D2 /* UIKit.framework */,
@@ -228,6 +282,7 @@
 		8524622C18944F94001315D2 /* FaceImageGallery */ = {
 			isa = PBXGroup;
 			children = (
+				85CC6AC9189C04C60027BDF4 /* Models */,
 				85C471D0189854A60006988C /* Views */,
 				859A9167189699E600307DE2 /* Controllers */,
 				859A9174189699E600307DE2 /* FaceRecognizer */,
@@ -235,7 +290,7 @@
 				8524625B18945066001315D2 /* Vendor */,
 				8524623518944F94001315D2 /* FIGAppDelegate.h */,
 				8524623618944F94001315D2 /* FIGAppDelegate.m */,
-				8524623818944F94001315D2 /* Main.storyboard */,
+				8524623818944F94001315D2 /* TuTeng.storyboard */,
 				8524623E18944F94001315D2 /* Images.xcassets */,
 				8524622D18944F94001315D2 /* Supporting Files */,
 			);
@@ -275,6 +330,8 @@
 		8524625B18945066001315D2 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				85CC6AC5189BC2110027BDF4 /* ReflectionView */,
+				85CC6AB8189BC1930027BDF4 /* FXImageView */,
 				853F8F4918997EB400477C94 /* iCarousel */,
 				8524625C18945066001315D2 /* JASidePanels */,
 			);
@@ -329,9 +386,48 @@
 			name = iCarousel;
 			sourceTree = "<group>";
 		};
+		8572E7DB189FB131001A9BD9 /* Faces */ = {
+			isa = PBXGroup;
+			children = (
+				8572E7DC189FB15B001A9BD9 /* TTFacesReader.h */,
+				8572E7DD189FB15B001A9BD9 /* TTFacesReader.m */,
+			);
+			name = Faces;
+			sourceTree = "<group>";
+		};
+		8572E7DF189FB170001A9BD9 /* Faces */ = {
+			isa = PBXGroup;
+			children = (
+				8572E7E9189FBC3C001A9BD9 /* Vo */,
+				8572E7E3189FB54C001A9BD9 /* TTFaceModel.h */,
+				8572E7E4189FB54C001A9BD9 /* TTFaceModel.mm */,
+				8572E7EA189FBFD7001A9BD9 /* TTOpenCVData.h */,
+				8572E7EB189FBFD7001A9BD9 /* TTOpenCVData.mm */,
+				8572E7ED189FC2E5001A9BD9 /* TTImageProcessor.h */,
+				8572E7EE189FC2E5001A9BD9 /* TTImageProcessor.mm */,
+				8572E7F518A03167001A9BD9 /* TTFaceDetector.h */,
+				8572E7F618A03167001A9BD9 /* TTFaceDetector.mm */,
+			);
+			name = Faces;
+			sourceTree = "<group>";
+		};
+		8572E7E9189FBC3C001A9BD9 /* Vo */ = {
+			isa = PBXGroup;
+			children = (
+				8572E7E0189FB46D001A9BD9 /* TTFaceInfo.h */,
+				8572E7E1189FB46D001A9BD9 /* TTFaceInfo.m */,
+				8572E7E6189FBB10001A9BD9 /* TTPersonInfo.h */,
+				8572E7E7189FBB10001A9BD9 /* TTPersonInfo.m */,
+				8572E7F2189FCA9A001A9BD9 /* TTPhotoInfo.h */,
+				8572E7F3189FCA9A001A9BD9 /* TTPhotoInfo.m */,
+			);
+			name = Vo;
+			sourceTree = "<group>";
+		};
 		859A9167189699E600307DE2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8572E7DB189FB131001A9BD9 /* Faces */,
 				853F8F4F189980E700477C94 /* iCarousel */,
 				85C471E018986FC40006988C /* Common */,
 				85C471DF18986DA50006988C /* Album */,
@@ -347,6 +443,10 @@
 				859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */,
 				859A9172189699E600307DE2 /* FIGRootViewController.h */,
 				859A9173189699E600307DE2 /* FIGRootViewController.m */,
+				85292DC818A1591F00A670A2 /* TTFaceCollectionViewController.h */,
+				85292DC918A1591F00A670A2 /* TTFaceCollectionViewController.m */,
+				85292DCB18A159C100A670A2 /* TTFaceUICollectionViewCell.h */,
+				85292DCC18A159C100A670A2 /* TTFaceUICollectionViewCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -414,6 +514,48 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		85CC6AB8189BC1930027BDF4 /* FXImageView */ = {
+			isa = PBXGroup;
+			children = (
+				85CC6ABF189BC1E60027BDF4 /* FXImageView.h */,
+				85CC6AC0189BC1E60027BDF4 /* FXImageView.m */,
+				85CC6AC1189BC1E60027BDF4 /* UIImage+FX.h */,
+				85CC6AC2189BC1E60027BDF4 /* UIImage+FX.m */,
+			);
+			name = FXImageView;
+			sourceTree = "<group>";
+		};
+		85CC6AC5189BC2110027BDF4 /* ReflectionView */ = {
+			isa = PBXGroup;
+			children = (
+				85CC6AC6189BC2110027BDF4 /* ReflectionView.h */,
+				85CC6AC7189BC2110027BDF4 /* ReflectionView.m */,
+			);
+			path = ReflectionView;
+			sourceTree = "<group>";
+		};
+		85CC6AC9189C04C60027BDF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8572E7DF189FB170001A9BD9 /* Faces */,
+				85CC6ACD189C07610027BDF4 /* AlbumReader */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		85CC6ACD189C07610027BDF4 /* AlbumReader */ = {
+			isa = PBXGroup;
+			children = (
+				85CC6ACA189C05AF0027BDF4 /* FIGAlbumReader.h */,
+				85CC6ACB189C05AF0027BDF4 /* FIGAlbumReader.m */,
+				85CC6ACE189C07810027BDF4 /* FIGAlbumInfo.h */,
+				85CC6ACF189C07810027BDF4 /* FIGAlbumInfo.m */,
+				857BFBC7189C9B100088C645 /* FIGPhotoInfo.h */,
+				857BFBC8189C9B100088C645 /* FIGPhotoInfo.m */,
+			);
+			name = AlbumReader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -438,9 +580,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8524625818944F94001315D2 /* Build configuration list for PBXNativeTarget "FaceImageGalleryTests" */;
 			buildPhases = (
+				2AAD206EB43D45098FD6580C /* Check Pods Manifest.lock */,
 				8524624018944F94001315D2 /* Sources */,
 				8524624118944F94001315D2 /* Frameworks */,
 				8524624218944F94001315D2 /* Resources */,
+				44A8899F2B7649AD89576A91 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -498,7 +642,7 @@
 				8524623F18944F94001315D2 /* Images.xcassets in Resources */,
 				8524623118944F94001315D2 /* InfoPlist.strings in Resources */,
 				8524627A18945066001315D2 /* Default-568h@2x.png in Resources */,
-				8524623A18944F94001315D2 /* Main.storyboard in Resources */,
+				8524623A18944F94001315D2 /* TuTeng.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,38 +656,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2AAD206EB43D45098FD6580C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44A8899F2B7649AD89576A91 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-FaceImageGalleryTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8524621F18944F94001315D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				859A9180189699E600307DE2 /* FIGFaceFinderViewController.m in Sources */,
+				8572E7F718A03167001A9BD9 /* TTFaceDetector.mm in Sources */,
 				8524623318944F94001315D2 /* main.m in Sources */,
 				859A9185189699E600307DE2 /* FIGFaceDetector.mm in Sources */,
 				85C471E9189876CA0006988C /* FIGPhotoPageViewController.m in Sources */,
 				85C471EF189885B80006988C /* FIGPhotoCollectionViewCell.m in Sources */,
 				85C471DB18985C5A0006988C /* FIGPhotoViewController.m in Sources */,
+				8572E7F4189FCA9A001A9BD9 /* TTPhotoInfo.m in Sources */,
 				853F8F551899887E00477C94 /* FIGiCarouselPhotoViewController.m in Sources */,
 				859A9182189699E600307DE2 /* FIGNavigationRootRightViewController.m in Sources */,
+				8572E7EC189FBFD7001A9BD9 /* TTOpenCVData.mm in Sources */,
 				85C471D5189857690006988C /* FIGUICollectionView.m in Sources */,
 				859A9187189699E600307DE2 /* FIGOpenCVUtils.mm in Sources */,
 				859A9183189699E600307DE2 /* FIGRootViewController.m in Sources */,
+				85CC6ACC189C05AF0027BDF4 /* FIGAlbumReader.m in Sources */,
 				85C471E6189875250006988C /* FIGPhotoDetailViewControllerData.m in Sources */,
 				8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */,
+				8572E7EF189FC2E5001A9BD9 /* TTImageProcessor.mm in Sources */,
+				85292DCA18A1591F00A670A2 /* TTFaceCollectionViewController.m in Sources */,
 				85C471E318986FF80006988C /* AssetsDataIsInaccessibleViewController.m in Sources */,
 				85C471CB189854200006988C /* FIGAlbumViewController.m in Sources */,
+				85292DCD18A159C100A670A2 /* TTFaceUICollectionViewCell.m in Sources */,
 				85C471CF1898547E0006988C /* FIGAlbumCollectionViewCell.m in Sources */,
 				859A9184189699E600307DE2 /* FIGCustomFaceRecognizer.mm in Sources */,
 				853F8F4C18997EB400477C94 /* iCarousel.m in Sources */,
 				859A917F189699E600307DE2 /* FIGNavigationRootCenterViewController.mm in Sources */,
+				8572E7E5189FB54C001A9BD9 /* TTFaceModel.mm in Sources */,
 				85C471EC189877F40006988C /* FIGImageScrollView.m in Sources */,
+				85CC6AC3189BC1E60027BDF4 /* FXImageView.m in Sources */,
 				8524628318945066001315D2 /* JASidePanelController.m in Sources */,
 				859A917E189699E600307DE2 /* FIGCameraFinderViewController.mm in Sources */,
 				859A9186189699E600307DE2 /* FIGOpenCVData.mm in Sources */,
+				8572E7DE189FB15B001A9BD9 /* TTFacesReader.m in Sources */,
+				8572E7E8189FBB10001A9BD9 /* TTPersonInfo.m in Sources */,
 				859A9181189699E600307DE2 /* FIGNavigationRootLeftViewController.m in Sources */,
 				8524623718944F94001315D2 /* FIGAppDelegate.m in Sources */,
 				853F8F521899810500477C94 /* FIGiCarouselAlbumViewController.m in Sources */,
+				85CC6AD0189C07810027BDF4 /* FIGAlbumInfo.m in Sources */,
+				85CC6AC4189BC1E60027BDF4 /* UIImage+FX.m in Sources */,
+				857BFBC9189C9B100088C645 /* FIGPhotoInfo.m in Sources */,
 				85C471DE18986DA00006988C /* FIGAlbumDetailViewController.m in Sources */,
+				85CC6AC8189BC2110027BDF4 /* ReflectionView.m in Sources */,
+				8572E7E2189FB46D001A9BD9 /* TTFaceInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,12 +767,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		8524623818944F94001315D2 /* Main.storyboard */ = {
+		8524623818944F94001315D2 /* TuTeng.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8524623918944F94001315D2 /* Base */,
 			);
-			name = Main.storyboard;
+			name = TuTeng.storyboard;
 			sourceTree = "<group>";
 		};
 		8524624E18944F94001315D2 /* InfoPlist.strings */ = {
@@ -674,10 +867,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jacky/Documents,
+					/Users/jacky/git/FaceImageGallery/FaceImageGallery,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
 				INFOPLIST_FILE = "FaceImageGallery/FaceImageGallery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -692,10 +887,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jacky/Documents,
+					/Users/jacky/git/FaceImageGallery/FaceImageGallery,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
 				INFOPLIST_FILE = "FaceImageGallery/FaceImageGallery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -703,6 +900,7 @@
 		};
 		8524625918944F94001315D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9404221293FF4CCAAE21F44B /* Pods-FaceImageGalleryTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FaceImageGallery.app/FaceImageGallery";
@@ -726,6 +924,7 @@
 		};
 		8524625A18944F94001315D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9404221293FF4CCAAE21F44B /* Pods-FaceImageGalleryTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FaceImageGallery.app/FaceImageGallery";

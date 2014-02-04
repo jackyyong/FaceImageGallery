@@ -31,12 +31,16 @@
 - (UIImage *)photoAtIndex:(NSUInteger)index
 {
     ALAsset *photoAsset = self.photoAssets[index];
-    
+   
     ALAssetRepresentation *assetRepresentation = [photoAsset defaultRepresentation];
     
     UIImage *fullScreenImage = [UIImage imageWithCGImage:[assetRepresentation fullScreenImage]
                                                    scale:[assetRepresentation scale]
                                              orientation:ALAssetOrientationUp];
+    
+
+    
+    
     return fullScreenImage;
 }
 

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "FIGAlbumInfo.h"
 
 @interface FIGAlbumDetailViewController : UICollectionViewController
 
-@property (nonatomic, strong) NSMutableArray *assets;
-@property (nonatomic, strong) ALAssetsGroup *assetsGroup;
+@property (nonatomic, strong) FIGAlbumInfo *albumInfo;
 
 @end

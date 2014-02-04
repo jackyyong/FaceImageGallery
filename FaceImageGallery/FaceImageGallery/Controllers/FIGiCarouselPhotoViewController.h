@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FIGiCarouselPhotoViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *iCarouselView;
+@property (nonatomic) IBOutlet UIImageView *iCarouselView;
 
 @end

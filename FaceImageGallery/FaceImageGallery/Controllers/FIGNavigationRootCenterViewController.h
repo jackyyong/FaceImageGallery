@@ -13,5 +13,8 @@
 @interface FIGNavigationRootCenterViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) FIGFaceDetector *faceDetector;
+- (IBAction)processFaces:(id)sender;
+@property (weak, nonatomic) IBOutlet UIProgressView *processBar;
 
+@property (weak, nonatomic) IBOutlet UILabel *processLabel;
 @end

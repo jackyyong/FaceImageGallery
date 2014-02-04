@@ -16,38 +16,18 @@
 
 @implementation FIGAlbumDetailViewController
 
--(NSMutableArray*)assets{
-    if(!_assets) {
-         _assets = [[NSMutableArray alloc] init];
-    }
-    return _assets;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = [self.assetsGroup valueForProperty:ALAssetsGroupPropertyName];
+    self.title =  self.albumInfo.albumName;
     
-    if ([self.assets count] > 0) {
-        [self.assets removeAllObjects];
+    if ([self.albumInfo getPhotosCount] > 0) {
+        [self.albumInfo removeAllPhotos];
     }
     
-    ALAssetsGroupEnumerationResultsBlock assetsEnumerationBlock = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
-        if (result) {
-            [self.assets addObject:result];
-        }
-    };
-    
-    ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
-    [self.assetsGroup setAssetsFilter:onlyPhotosFilter];
-    [self.assetsGroup enumerateAssetsUsingBlock:assetsEnumerationBlock];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-   
+    [self.albumInfo readPhotos];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,10 +36,8 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return self.assets.count;
+    return [self.albumInfo getPhotosCount];
 }
-
-#define kImageViewTag 1 // the image view inside the collection view cell prototype is tagged with "1"
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -68,8 +46,9 @@
     FIGPhotoCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // load the asset for this cell
-    ALAsset *asset = self.assets[indexPath.row];
-    CGImageRef thumbnailImageRef = [asset thumbnail];
+    
+    
+    CGImageRef thumbnailImageRef = [[self.albumInfo getPhotoInfoAtIndex:indexPath.row] thumbnail];
     UIImage *thumbnail = [UIImage imageWithCGImage:thumbnailImageRef];
     
     // apply the image to the cell
@@ -83,7 +62,7 @@
     if ([[segue identifier] isEqualToString:@"showPhoto"]) {
         
         // hand off the assets of this album to our singleton data source
-        [FIGPhotoDetailViewControllerData sharedInstance].photoAssets = self.assets;
+        [FIGPhotoDetailViewControllerData sharedInstance].photoAssets = self.albumInfo.photos;
         
         // start viewing the image at the appropriate cell index
         FIGPhotoPageViewController *photoPageViewController = [segue destinationViewController];
