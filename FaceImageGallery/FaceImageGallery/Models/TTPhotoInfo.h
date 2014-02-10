@@ -11,13 +11,13 @@
 @interface TTPhotoInfo : NSObject
 
     // 图片id
-    @property (nonatomic, assign) NSInteger id;
+    @property (nonatomic, assign) NSUInteger id;
     
     // 拍摄时间
-    @property (nonatomic, strong) NSString * takeTime;
+    @property (nonatomic, retain) NSString * takeTime;
     
     // 图片地址
-    @property (nonatomic, strong) NSString * absoluteURL;
+    @property (nonatomic, retain) NSString * absoluteURL;
     
     // 图片宽度
     @property (nonatomic, assign) CGFloat width;
@@ -33,6 +33,8 @@
     
     // 图片拍摄海拔高度
     @property (nonatomic, assign) double altitude;
+
+    @property (nonatomic, assign) float scale;
 
     // 关联的所有的Face, 类型是 TTFaceInfo
     @property (nonatomic, strong) NSMutableArray * faces;

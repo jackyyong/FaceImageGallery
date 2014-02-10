@@ -11,9 +11,6 @@
 #import "FIGFaceDetector.h"
 #import "FIGCustomFaceRecognizer.h"
 
-
-//CvVideoCameraDelegate
-
 @interface FIGCameraFinderViewController : UIViewController<CvPhotoCameraDelegate>
 @property (nonatomic, strong) FIGFaceDetector *faceDetector;
 @property (nonatomic, strong) FIGCustomFaceRecognizer *faceRecognizer;

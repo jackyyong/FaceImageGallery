@@ -6,7 +6,9 @@
 //  Copyright (c) 2014年 com.heraysoft. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+#import "JASidePanelController.h"
 
 @interface FIGAppDelegate : UIResponder <UIApplicationDelegate>
 

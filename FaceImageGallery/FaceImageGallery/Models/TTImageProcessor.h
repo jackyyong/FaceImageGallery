@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "TTImageProcessorDelegate.h"
 
+    // 图片处理器
 @interface TTImageProcessor : NSObject
 
-//处理单张图片/视频
--(void) process:(ALAsset*)asset;
+@property(nonatomic,assign)id<TTImageProcessorDelegate> delegate;
 
--(NSInteger) processGroup:(ALAssetsGroup*)group;
+    // 处理整个图片库
+    -(void) processAllLibrary;
 
--(void) processAllLibrary;
-
--(void) cleanDatabase;
+    -(BOOL) isDatabaseCreated;
 
 @end

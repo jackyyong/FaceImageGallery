@@ -353,6 +353,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     return NSNotFound;
 }
 
+
 - (NSInteger)indexOfItemViewOrSubview:(UIView *)view
 {
     NSInteger index = [self indexOfItemView:view];

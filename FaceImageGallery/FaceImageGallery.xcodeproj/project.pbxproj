@@ -7,40 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8519B68518A8E98500C69285 /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8519B68218A8E98500C69285 /* lbpcascade_frontalface.xml */; };
+		8519B68618A8E98500C69285 /* lbpcascade_profileface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8519B68318A8E98500C69285 /* lbpcascade_profileface.xml */; };
+		8519B68718A8E98500C69285 /* lbpcascade_silverware.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8519B68418A8E98500C69285 /* lbpcascade_silverware.xml */; };
+		8519B68918A8E99900C69285 /* hogcascade_pedestrians.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8519B68818A8E99900C69285 /* hogcascade_pedestrians.xml */; };
 		8524622718944F94001315D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622618944F94001315D2 /* Foundation.framework */; };
 		8524622918944F94001315D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622818944F94001315D2 /* CoreGraphics.framework */; };
 		8524622B18944F94001315D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622A18944F94001315D2 /* UIKit.framework */; };
 		8524623118944F94001315D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8524622F18944F94001315D2 /* InfoPlist.strings */; };
 		8524623318944F94001315D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524623218944F94001315D2 /* main.m */; };
-		8524623718944F94001315D2 /* FIGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524623618944F94001315D2 /* FIGAppDelegate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		8524623A18944F94001315D2 /* TuTeng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8524623818944F94001315D2 /* TuTeng.storyboard */; };
+		8524623718944F94001315D2 /* FIGAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8524623618944F94001315D2 /* FIGAppDelegate.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8524623F18944F94001315D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8524623E18944F94001315D2 /* Images.xcassets */; };
 		8524624618944F94001315D2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524624518944F94001315D2 /* XCTest.framework */; };
 		8524624718944F94001315D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622618944F94001315D2 /* Foundation.framework */; };
 		8524624818944F94001315D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524622A18944F94001315D2 /* UIKit.framework */; };
-		8524625018944F94001315D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8524624E18944F94001315D2 /* InfoPlist.strings */; };
-		8524625218944F94001315D2 /* FaceImageGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524625118944F94001315D2 /* FaceImageGalleryTests.m */; };
 		8524627A18945066001315D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8524625E18945066001315D2 /* Default-568h@2x.png */; };
 		8524628318945066001315D2 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627218945066001315D2 /* JASidePanelController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627418945066001315D2 /* UIViewController+JASidePanel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		85292DCA18A1591F00A670A2 /* TTFaceCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85292DC918A1591F00A670A2 /* TTFaceCollectionViewController.m */; };
-		85292DCD18A159C100A670A2 /* TTFaceUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85292DCC18A159C100A670A2 /* TTFaceUICollectionViewCell.m */; };
+		8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8524627418945066001315D2 /* UIViewController+JASidePanel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		85292DCA18A1591F00A670A2 /* TTIndexCollectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 85292DC918A1591F00A670A2 /* TTIndexCollectionViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		85328DEE18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 85328DED18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		85328DF218A307A500C3DCAF /* TTIndexCollectionViewDataSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = 85328DF118A307A500C3DCAF /* TTIndexCollectionViewDataSource.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		85328DF518A3080800C3DCAF /* TTIndexCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85328DF418A3080800C3DCAF /* TTIndexCollectionViewDelegate.m */; };
+		85328DFB18A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 85328DFA18A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.m */; };
+		85328DFE18A314B500C3DCAF /* UIIndexShelfView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85328DFD18A314B500C3DCAF /* UIIndexShelfView.m */; };
 		853F8F4C18997EB400477C94 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F4B18997EB400477C94 /* iCarousel.m */; };
 		853F8F521899810500477C94 /* FIGiCarouselAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */; };
 		853F8F551899887E00477C94 /* FIGiCarouselPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */; };
+		8556D1FE18A18A3800F7788B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8556D1FD18A18A3800F7788B /* CoreImage.framework */; };
+		8556D20118A18D3E00F7788B /* TTFaceModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8556D20018A18D3E00F7788B /* TTFaceModel.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8572E7DE189FB15B001A9BD9 /* TTFacesReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7DD189FB15B001A9BD9 /* TTFacesReader.m */; };
 		8572E7E2189FB46D001A9BD9 /* TTFaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7E1189FB46D001A9BD9 /* TTFaceInfo.m */; };
-		8572E7E5189FB54C001A9BD9 /* TTFaceModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7E4189FB54C001A9BD9 /* TTFaceModel.mm */; };
 		8572E7E8189FBB10001A9BD9 /* TTPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7E7189FBB10001A9BD9 /* TTPersonInfo.m */; };
-		8572E7EC189FBFD7001A9BD9 /* TTOpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7EB189FBFD7001A9BD9 /* TTOpenCVData.mm */; };
-		8572E7EF189FC2E5001A9BD9 /* TTImageProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7EE189FC2E5001A9BD9 /* TTImageProcessor.mm */; };
+		8572E7EC189FBFD7001A9BD9 /* TTOpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7EB189FBFD7001A9BD9 /* TTOpenCVData.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8572E7EF189FC2E5001A9BD9 /* TTImageProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7EE189FC2E5001A9BD9 /* TTImageProcessor.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8572E7F1189FC873001A9BD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8572E7F0189FC873001A9BD9 /* CoreLocation.framework */; };
 		8572E7F4189FCA9A001A9BD9 /* TTPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7F3189FCA9A001A9BD9 /* TTPhotoInfo.m */; };
-		8572E7F718A03167001A9BD9 /* TTFaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7F618A03167001A9BD9 /* TTFaceDetector.mm */; };
+		8572E7F718A03167001A9BD9 /* TTFaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8572E7F618A03167001A9BD9 /* TTFaceDetector.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		857BFBC9189C9B100088C645 /* FIGPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 857BFBC8189C9B100088C645 /* FIGPhotoInfo.m */; };
 		859796AD1894EFCB00555D88 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796AC1894EFCB00555D88 /* AVFoundation.framework */; };
 		859796B01894EFD200555D88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796AF1894EFD200555D88 /* ImageIO.framework */; };
-		859796B21894EFDC00555D88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B11894EFDC00555D88 /* libz.dylib */; };
 		859796B41894EFE200555D88 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B31894EFE200555D88 /* CoreVideo.framework */; };
 		859796B61894EFE800555D88 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796B51894EFE800555D88 /* CoreMedia.framework */; };
 		859796C91894FCE300555D88 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 859796C81894FCE300555D88 /* haarcascade_frontalface_alt2.xml */; };
@@ -48,16 +53,15 @@
 		859796D6189502BE00555D88 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D4189502BE00555D88 /* Accelerate.framework */; };
 		859796D7189502BE00555D88 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D5189502BE00555D88 /* AssetsLibrary.framework */; };
 		859796D9189502CF00555D88 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859796D8189502CF00555D88 /* QuartzCore.framework */; };
-		859A917E189699E600307DE2 /* FIGCameraFinderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */; };
-		859A917F189699E600307DE2 /* FIGNavigationRootCenterViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A916B189699E600307DE2 /* FIGNavigationRootCenterViewController.mm */; };
+		859A917E189699E600307DE2 /* FIGCameraFinderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		859A917F189699E600307DE2 /* TTRootCenterViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A916B189699E600307DE2 /* TTRootCenterViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		859A9180189699E600307DE2 /* FIGFaceFinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A916D189699E600307DE2 /* FIGFaceFinderViewController.m */; };
-		859A9181189699E600307DE2 /* FIGNavigationRootLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A916F189699E600307DE2 /* FIGNavigationRootLeftViewController.m */; };
-		859A9182189699E600307DE2 /* FIGNavigationRootRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */; };
-		859A9183189699E600307DE2 /* FIGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A9173189699E600307DE2 /* FIGRootViewController.m */; };
-		859A9184189699E600307DE2 /* FIGCustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9176189699E600307DE2 /* FIGCustomFaceRecognizer.mm */; };
-		859A9185189699E600307DE2 /* FIGFaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9178189699E600307DE2 /* FIGFaceDetector.mm */; };
-		859A9186189699E600307DE2 /* FIGOpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A917A189699E600307DE2 /* FIGOpenCVData.mm */; };
-		859A9187189699E600307DE2 /* FIGOpenCVUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A917C189699E600307DE2 /* FIGOpenCVUtils.mm */; };
+		859A9181189699E600307DE2 /* TTRootLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A916F189699E600307DE2 /* TTRootLeftViewController.m */; };
+		859A9183189699E600307DE2 /* TTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A9173189699E600307DE2 /* TTRootViewController.m */; };
+		859A9184189699E600307DE2 /* FIGCustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9176189699E600307DE2 /* FIGCustomFaceRecognizer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		859A9185189699E600307DE2 /* FIGFaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A9178189699E600307DE2 /* FIGFaceDetector.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		859A9186189699E600307DE2 /* FIGOpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A917A189699E600307DE2 /* FIGOpenCVData.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		859A9187189699E600307DE2 /* FIGOpenCVUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 859A917C189699E600307DE2 /* FIGOpenCVUtils.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		85C471CB189854200006988C /* FIGAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471CA189854200006988C /* FIGAlbumViewController.m */; };
 		85C471CF1898547E0006988C /* FIGAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471CE1898547E0006988C /* FIGAlbumCollectionViewCell.m */; };
 		85C471D5189857690006988C /* FIGUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471D4189857690006988C /* FIGUICollectionView.m */; };
@@ -68,12 +72,37 @@
 		85C471E9189876CA0006988C /* FIGPhotoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471E8189876CA0006988C /* FIGPhotoPageViewController.m */; };
 		85C471EC189877F40006988C /* FIGImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471EB189877F40006988C /* FIGImageScrollView.m */; };
 		85C471EF189885B80006988C /* FIGPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */; };
+		85CC34CA18A2DBC400EEF57D /* TTIndexCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC34C918A2DBC400EEF57D /* TTIndexCollectionView.m */; };
+		85CC34CD18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC34CC18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.m */; };
 		85CC6AB7189BBF500027BDF4 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CC6AB6189BBF500027BDF4 /* opencv2.framework */; };
 		85CC6AC3189BC1E60027BDF4 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6AC0189BC1E60027BDF4 /* FXImageView.m */; };
 		85CC6AC4189BC1E60027BDF4 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6AC2189BC1E60027BDF4 /* UIImage+FX.m */; };
 		85CC6AC8189BC2110027BDF4 /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6AC7189BC2110027BDF4 /* ReflectionView.m */; };
 		85CC6ACC189C05AF0027BDF4 /* FIGAlbumReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6ACB189C05AF0027BDF4 /* FIGAlbumReader.m */; };
 		85CC6AD0189C07810027BDF4 /* FIGAlbumInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC6ACF189C07810027BDF4 /* FIGAlbumInfo.m */; };
+		85CEECE518A5799D00A699C1 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECE418A5799D00A699C1 /* haarcascade_frontalface_alt.xml */; };
+		85CEECE818A579AC00A699C1 /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECE618A579AC00A699C1 /* haarcascade_eye_tree_eyeglasses.xml */; };
+		85CEECE918A579AC00A699C1 /* haarcascade_eye.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECE718A579AC00A699C1 /* haarcascade_eye.xml */; };
+		85CEECFC18A579C400A699C1 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECEA18A579C400A699C1 /* haarcascade_frontalface_alt_tree.xml */; };
+		85CEECFD18A579C400A699C1 /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECEB18A579C400A699C1 /* haarcascade_frontalface_default.xml */; };
+		85CEECFE18A579C400A699C1 /* haarcascade_fullbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECEC18A579C400A699C1 /* haarcascade_fullbody.xml */; };
+		85CEECFF18A579C400A699C1 /* haarcascade_lefteye_2splits.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECED18A579C400A699C1 /* haarcascade_lefteye_2splits.xml */; };
+		85CEED0018A579C400A699C1 /* haarcascade_lowerbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECEE18A579C400A699C1 /* haarcascade_lowerbody.xml */; };
+		85CEED0118A579C400A699C1 /* haarcascade_mcs_eyepair_big.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECEF18A579C400A699C1 /* haarcascade_mcs_eyepair_big.xml */; };
+		85CEED0218A579C400A699C1 /* haarcascade_mcs_eyepair_small.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF018A579C400A699C1 /* haarcascade_mcs_eyepair_small.xml */; };
+		85CEED0318A579C400A699C1 /* haarcascade_mcs_leftear.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF118A579C400A699C1 /* haarcascade_mcs_leftear.xml */; };
+		85CEED0418A579C400A699C1 /* haarcascade_mcs_lefteye.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF218A579C400A699C1 /* haarcascade_mcs_lefteye.xml */; };
+		85CEED0518A579C400A699C1 /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF318A579C400A699C1 /* haarcascade_mcs_mouth.xml */; };
+		85CEED0618A579C400A699C1 /* haarcascade_mcs_nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF418A579C400A699C1 /* haarcascade_mcs_nose.xml */; };
+		85CEED0718A579C400A699C1 /* haarcascade_mcs_rightear.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF518A579C400A699C1 /* haarcascade_mcs_rightear.xml */; };
+		85CEED0818A579C400A699C1 /* haarcascade_mcs_righteye.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF618A579C400A699C1 /* haarcascade_mcs_righteye.xml */; };
+		85CEED0918A579C400A699C1 /* haarcascade_mcs_upperbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF718A579C400A699C1 /* haarcascade_mcs_upperbody.xml */; };
+		85CEED0A18A579C400A699C1 /* haarcascade_profileface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF818A579C400A699C1 /* haarcascade_profileface.xml */; };
+		85CEED0B18A579C400A699C1 /* haarcascade_righteye_2splits.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECF918A579C400A699C1 /* haarcascade_righteye_2splits.xml */; };
+		85CEED0C18A579C400A699C1 /* haarcascade_smile.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECFA18A579C400A699C1 /* haarcascade_smile.xml */; };
+		85CEED0D18A579C400A699C1 /* haarcascade_upperbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85CEECFB18A579C400A699C1 /* haarcascade_upperbody.xml */; };
+		85ECCB7E18A32B0400787577 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 85ECCB7B18A32B0400787577 /* CRNavigationBar.m */; };
+		85ECCB7F18A32B0400787577 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85ECCB7D18A32B0400787577 /* CRNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +116,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8519B68218A8E98500C69285 /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
+		8519B68318A8E98500C69285 /* lbpcascade_profileface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_profileface.xml; sourceTree = "<group>"; };
+		8519B68418A8E98500C69285 /* lbpcascade_silverware.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_silverware.xml; sourceTree = "<group>"; };
+		8519B68818A8E99900C69285 /* hogcascade_pedestrians.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hogcascade_pedestrians.xml; sourceTree = "<group>"; };
 		8524622318944F94001315D2 /* FaceImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8524622618944F94001315D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8524622818944F94001315D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,35 +129,43 @@
 		8524623218944F94001315D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8524623418944F94001315D2 /* FaceImageGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceImageGallery-Prefix.pch"; sourceTree = "<group>"; };
 		8524623518944F94001315D2 /* FIGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIGAppDelegate.h; sourceTree = "<group>"; };
-		8524623618944F94001315D2 /* FIGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIGAppDelegate.m; sourceTree = "<group>"; };
-		8524623918944F94001315D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TuTeng.storyboard; sourceTree = "<group>"; };
+		8524623618944F94001315D2 /* FIGAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGAppDelegate.mm; sourceTree = "<group>"; };
 		8524623E18944F94001315D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8524624418944F94001315D2 /* FaceImageGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceImageGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8524624518944F94001315D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8524624D18944F94001315D2 /* FaceImageGalleryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FaceImageGalleryTests-Info.plist"; sourceTree = "<group>"; };
-		8524624F18944F94001315D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8524625118944F94001315D2 /* FaceImageGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceImageGalleryTests.m; sourceTree = "<group>"; };
 		8524625E18945066001315D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8524627118945066001315D2 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		8524627218945066001315D2 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		8524627318945066001315D2 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
 		8524627418945066001315D2 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
-		85292DC818A1591F00A670A2 /* TTFaceCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFaceCollectionViewController.h; sourceTree = "<group>"; };
-		85292DC918A1591F00A670A2 /* TTFaceCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFaceCollectionViewController.m; sourceTree = "<group>"; };
-		85292DCB18A159C100A670A2 /* TTFaceUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceUICollectionViewCell.h; path = FaceImageGallery/Views/TTFaceUICollectionViewCell.h; sourceTree = SOURCE_ROOT; };
-		85292DCC18A159C100A670A2 /* TTFaceUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTFaceUICollectionViewCell.m; path = FaceImageGallery/Views/TTFaceUICollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		85292DC818A1591F00A670A2 /* TTIndexCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIndexCollectionViewController.h; path = Controllers/TTIndexCollectionViewController.h; sourceTree = "<group>"; };
+		85292DC918A1591F00A670A2 /* TTIndexCollectionViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTIndexCollectionViewController.mm; path = Controllers/TTIndexCollectionViewController.mm; sourceTree = "<group>"; };
+		852C508618A6C14B009A5644 /* TTImageProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTImageProcessorDelegate.h; sourceTree = "<group>"; };
+		85328DEC18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIndexCollectionViewCell.h; path = Controllers/TTIndexCollectionViewCell.h; sourceTree = "<group>"; };
+		85328DED18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTIndexCollectionViewCell.mm; path = Controllers/TTIndexCollectionViewCell.mm; sourceTree = "<group>"; };
+		85328DF018A307A500C3DCAF /* TTIndexCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIndexCollectionViewDataSource.h; sourceTree = "<group>"; };
+		85328DF118A307A500C3DCAF /* TTIndexCollectionViewDataSource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTIndexCollectionViewDataSource.mm; sourceTree = "<group>"; };
+		85328DF318A3080800C3DCAF /* TTIndexCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIndexCollectionViewDelegate.h; sourceTree = "<group>"; };
+		85328DF418A3080800C3DCAF /* TTIndexCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIndexCollectionViewDelegate.m; sourceTree = "<group>"; };
+		85328DF618A30A5D00C3DCAF /* TTCst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCst.h; sourceTree = "<group>"; };
+		85328DF918A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIndexCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		85328DFA18A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIndexCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		85328DFC18A314B500C3DCAF /* UIIndexShelfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIIndexShelfView.h; sourceTree = "<group>"; };
+		85328DFD18A314B500C3DCAF /* UIIndexShelfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIIndexShelfView.m; sourceTree = "<group>"; };
 		853F8F4A18997EB400477C94 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		853F8F4B18997EB400477C94 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		853F8F501899810500477C94 /* FIGiCarouselAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGiCarouselAlbumViewController.h; sourceTree = "<group>"; };
 		853F8F511899810500477C94 /* FIGiCarouselAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGiCarouselAlbumViewController.m; sourceTree = "<group>"; };
 		853F8F531899887E00477C94 /* FIGiCarouselPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGiCarouselPhotoViewController.h; sourceTree = "<group>"; };
 		853F8F541899887E00477C94 /* FIGiCarouselPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGiCarouselPhotoViewController.m; sourceTree = "<group>"; };
+		8556D1FB18A188C500F7788B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		8556D1FD18A18A3800F7788B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		8556D1FF18A18D3E00F7788B /* TTFaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFaceModel.h; sourceTree = "<group>"; };
+		8556D20018A18D3E00F7788B /* TTFaceModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTFaceModel.mm; sourceTree = "<group>"; };
 		8572E7DC189FB15B001A9BD9 /* TTFacesReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFacesReader.h; sourceTree = "<group>"; };
 		8572E7DD189FB15B001A9BD9 /* TTFacesReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFacesReader.m; sourceTree = "<group>"; };
 		8572E7E0189FB46D001A9BD9 /* TTFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceInfo.h; path = Models/TTFaceInfo.h; sourceTree = "<group>"; };
 		8572E7E1189FB46D001A9BD9 /* TTFaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTFaceInfo.m; path = Models/TTFaceInfo.m; sourceTree = "<group>"; };
-		8572E7E3189FB54C001A9BD9 /* TTFaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFaceModel.h; path = Models/TTFaceModel.h; sourceTree = "<group>"; };
-		8572E7E4189FB54C001A9BD9 /* TTFaceModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTFaceModel.mm; path = Models/TTFaceModel.mm; sourceTree = "<group>"; };
 		8572E7E6189FBB10001A9BD9 /* TTPersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPersonInfo.h; path = Models/TTPersonInfo.h; sourceTree = "<group>"; };
 		8572E7E7189FBB10001A9BD9 /* TTPersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTPersonInfo.m; path = Models/TTPersonInfo.m; sourceTree = "<group>"; };
 		8572E7EA189FBFD7001A9BD9 /* TTOpenCVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTOpenCVData.h; path = Models/TTOpenCVData.h; sourceTree = "<group>"; };
@@ -150,16 +191,14 @@
 		859796D8189502CF00555D88 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		859A9168189699E600307DE2 /* FIGCameraFinderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGCameraFinderViewController.h; sourceTree = "<group>"; };
 		859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGCameraFinderViewController.mm; sourceTree = "<group>"; };
-		859A916A189699E600307DE2 /* FIGNavigationRootCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGNavigationRootCenterViewController.h; sourceTree = "<group>"; };
-		859A916B189699E600307DE2 /* FIGNavigationRootCenterViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGNavigationRootCenterViewController.mm; sourceTree = "<group>"; };
+		859A916A189699E600307DE2 /* TTRootCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRootCenterViewController.h; sourceTree = "<group>"; };
+		859A916B189699E600307DE2 /* TTRootCenterViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTRootCenterViewController.mm; sourceTree = "<group>"; };
 		859A916C189699E600307DE2 /* FIGFaceFinderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGFaceFinderViewController.h; sourceTree = "<group>"; };
 		859A916D189699E600307DE2 /* FIGFaceFinderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGFaceFinderViewController.m; sourceTree = "<group>"; };
-		859A916E189699E600307DE2 /* FIGNavigationRootLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGNavigationRootLeftViewController.h; sourceTree = "<group>"; };
-		859A916F189699E600307DE2 /* FIGNavigationRootLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGNavigationRootLeftViewController.m; sourceTree = "<group>"; };
-		859A9170189699E600307DE2 /* FIGNavigationRootRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGNavigationRootRightViewController.h; sourceTree = "<group>"; };
-		859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGNavigationRootRightViewController.m; sourceTree = "<group>"; };
-		859A9172189699E600307DE2 /* FIGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGRootViewController.h; sourceTree = "<group>"; };
-		859A9173189699E600307DE2 /* FIGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGRootViewController.m; sourceTree = "<group>"; };
+		859A916E189699E600307DE2 /* TTRootLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRootLeftViewController.h; sourceTree = "<group>"; };
+		859A916F189699E600307DE2 /* TTRootLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRootLeftViewController.m; sourceTree = "<group>"; };
+		859A9172189699E600307DE2 /* TTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRootViewController.h; sourceTree = "<group>"; };
+		859A9173189699E600307DE2 /* TTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRootViewController.m; sourceTree = "<group>"; };
 		859A9175189699E600307DE2 /* FIGCustomFaceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGCustomFaceRecognizer.h; sourceTree = "<group>"; };
 		859A9176189699E600307DE2 /* FIGCustomFaceRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIGCustomFaceRecognizer.mm; sourceTree = "<group>"; };
 		859A9177189699E600307DE2 /* FIGFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIGFaceDetector.h; sourceTree = "<group>"; };
@@ -188,6 +227,10 @@
 		85C471EB189877F40006988C /* FIGImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIGImageScrollView.m; sourceTree = "<group>"; };
 		85C471ED189885B80006988C /* FIGPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGPhotoCollectionViewCell.h; path = Views/FIGPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		85C471EE189885B80006988C /* FIGPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGPhotoCollectionViewCell.m; path = Views/FIGPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		85CC34C818A2DBC400EEF57D /* TTIndexCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIndexCollectionView.h; path = Controllers/TTIndexCollectionView.h; sourceTree = "<group>"; };
+		85CC34C918A2DBC400EEF57D /* TTIndexCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTIndexCollectionView.m; path = Controllers/TTIndexCollectionView.m; sourceTree = "<group>"; };
+		85CC34CB18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIndexCollectionViewFlowLayout.h; path = Controllers/TTIndexCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		85CC34CC18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTIndexCollectionViewFlowLayout.m; path = Controllers/TTIndexCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		85CC6AB6189BBF500027BDF4 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		85CC6ABF189BC1E60027BDF4 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXImageView.h; path = FXImageView/FXImageView.h; sourceTree = "<group>"; };
 		85CC6AC0189BC1E60027BDF4 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXImageView.m; path = FXImageView/FXImageView.m; sourceTree = "<group>"; };
@@ -199,6 +242,31 @@
 		85CC6ACB189C05AF0027BDF4 /* FIGAlbumReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGAlbumReader.m; path = Models/FIGAlbumReader.m; sourceTree = "<group>"; };
 		85CC6ACE189C07810027BDF4 /* FIGAlbumInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIGAlbumInfo.h; path = Models/FIGAlbumInfo.h; sourceTree = "<group>"; };
 		85CC6ACF189C07810027BDF4 /* FIGAlbumInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FIGAlbumInfo.m; path = Models/FIGAlbumInfo.m; sourceTree = "<group>"; };
+		85CEECE418A5799D00A699C1 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
+		85CEECE618A579AC00A699C1 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
+		85CEECE718A579AC00A699C1 /* haarcascade_eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye.xml; sourceTree = "<group>"; };
+		85CEECEA18A579C400A699C1 /* haarcascade_frontalface_alt_tree.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt_tree.xml; sourceTree = "<group>"; };
+		85CEECEB18A579C400A699C1 /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_default.xml; sourceTree = "<group>"; };
+		85CEECEC18A579C400A699C1 /* haarcascade_fullbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_fullbody.xml; sourceTree = "<group>"; };
+		85CEECED18A579C400A699C1 /* haarcascade_lefteye_2splits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_lefteye_2splits.xml; sourceTree = "<group>"; };
+		85CEECEE18A579C400A699C1 /* haarcascade_lowerbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_lowerbody.xml; sourceTree = "<group>"; };
+		85CEECEF18A579C400A699C1 /* haarcascade_mcs_eyepair_big.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_eyepair_big.xml; sourceTree = "<group>"; };
+		85CEECF018A579C400A699C1 /* haarcascade_mcs_eyepair_small.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_eyepair_small.xml; sourceTree = "<group>"; };
+		85CEECF118A579C400A699C1 /* haarcascade_mcs_leftear.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_leftear.xml; sourceTree = "<group>"; };
+		85CEECF218A579C400A699C1 /* haarcascade_mcs_lefteye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_lefteye.xml; sourceTree = "<group>"; };
+		85CEECF318A579C400A699C1 /* haarcascade_mcs_mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_mouth.xml; sourceTree = "<group>"; };
+		85CEECF418A579C400A699C1 /* haarcascade_mcs_nose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_nose.xml; sourceTree = "<group>"; };
+		85CEECF518A579C400A699C1 /* haarcascade_mcs_rightear.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_rightear.xml; sourceTree = "<group>"; };
+		85CEECF618A579C400A699C1 /* haarcascade_mcs_righteye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_righteye.xml; sourceTree = "<group>"; };
+		85CEECF718A579C400A699C1 /* haarcascade_mcs_upperbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_upperbody.xml; sourceTree = "<group>"; };
+		85CEECF818A579C400A699C1 /* haarcascade_profileface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_profileface.xml; sourceTree = "<group>"; };
+		85CEECF918A579C400A699C1 /* haarcascade_righteye_2splits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_righteye_2splits.xml; sourceTree = "<group>"; };
+		85CEECFA18A579C400A699C1 /* haarcascade_smile.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_smile.xml; sourceTree = "<group>"; };
+		85CEECFB18A579C400A699C1 /* haarcascade_upperbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_upperbody.xml; sourceTree = "<group>"; };
+		85ECCB7A18A32B0400787577 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationBar.h; sourceTree = "<group>"; };
+		85ECCB7B18A32B0400787577 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
+		85ECCB7C18A32B0400787577 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
+		85ECCB7D18A32B0400787577 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
 		9404221293FF4CCAAE21F44B /* Pods-FaceImageGalleryTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceImageGalleryTests.xcconfig"; path = "Pods/Pods-FaceImageGalleryTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8556D1FE18A18A3800F7788B /* CoreImage.framework in Frameworks */,
 				8572E7F1189FC873001A9BD9 /* CoreLocation.framework in Frameworks */,
 				859796D9189502CF00555D88 /* QuartzCore.framework in Frameworks */,
 				859796D6189502BE00555D88 /* Accelerate.framework in Frameworks */,
@@ -215,7 +284,6 @@
 				859796B61894EFE800555D88 /* CoreMedia.framework in Frameworks */,
 				85CC6AB7189BBF500027BDF4 /* opencv2.framework in Frameworks */,
 				859796B41894EFE200555D88 /* CoreVideo.framework in Frameworks */,
-				859796B21894EFDC00555D88 /* libz.dylib in Frameworks */,
 				859796B01894EFD200555D88 /* ImageIO.framework in Frameworks */,
 				859796AD1894EFCB00555D88 /* AVFoundation.framework in Frameworks */,
 				8524622918944F94001315D2 /* CoreGraphics.framework in Frameworks */,
@@ -241,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				8524622C18944F94001315D2 /* FaceImageGallery */,
-				8524624B18944F94001315D2 /* FaceImageGalleryTests */,
 				8524622518944F94001315D2 /* Frameworks */,
 				8524622418944F94001315D2 /* Products */,
 				9404221293FF4CCAAE21F44B /* Pods-FaceImageGalleryTests.xcconfig */,
@@ -260,6 +327,8 @@
 		8524622518944F94001315D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8556D1FD18A18A3800F7788B /* CoreImage.framework */,
+				8556D1FB18A188C500F7788B /* libc++.dylib */,
 				8572E7F0189FC873001A9BD9 /* CoreLocation.framework */,
 				85CC6AB6189BBF500027BDF4 /* opencv2.framework */,
 				859796D8189502CF00555D88 /* QuartzCore.framework */,
@@ -282,17 +351,18 @@
 		8524622C18944F94001315D2 /* FaceImageGallery */ = {
 			isa = PBXGroup;
 			children = (
-				85CC6AC9189C04C60027BDF4 /* Models */,
-				85C471D0189854A60006988C /* Views */,
+				8524623518944F94001315D2 /* FIGAppDelegate.h */,
+				85328DF618A30A5D00C3DCAF /* TTCst.h */,
+				8524623618944F94001315D2 /* FIGAppDelegate.mm */,
+				8524623E18944F94001315D2 /* Images.xcassets */,
 				859A9167189699E600307DE2 /* Controllers */,
 				859A9174189699E600307DE2 /* FaceRecognizer */,
+				85328DEF18A3069300C3DCAF /* Index */,
+				85CC6AC9189C04C60027BDF4 /* Models */,
 				859A917D189699E600307DE2 /* Models */,
-				8524625B18945066001315D2 /* Vendor */,
-				8524623518944F94001315D2 /* FIGAppDelegate.h */,
-				8524623618944F94001315D2 /* FIGAppDelegate.m */,
-				8524623818944F94001315D2 /* TuTeng.storyboard */,
-				8524623E18944F94001315D2 /* Images.xcassets */,
 				8524622D18944F94001315D2 /* Supporting Files */,
+				8524625B18945066001315D2 /* Vendor */,
+				85C471D0189854A60006988C /* Views */,
 			);
 			path = FaceImageGallery;
 			sourceTree = "<group>";
@@ -300,7 +370,7 @@
 		8524622D18944F94001315D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				859796C81894FCE300555D88 /* haarcascade_frontalface_alt2.xml */,
+				85CEED0E18A579C800A699C1 /* OpenCVDatas */,
 				8524622E18944F94001315D2 /* FaceImageGallery-Info.plist */,
 				8524622F18944F94001315D2 /* InfoPlist.strings */,
 				8524623218944F94001315D2 /* main.m */,
@@ -309,27 +379,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8524624B18944F94001315D2 /* FaceImageGalleryTests */ = {
-			isa = PBXGroup;
-			children = (
-				8524625118944F94001315D2 /* FaceImageGalleryTests.m */,
-				8524624C18944F94001315D2 /* Supporting Files */,
-			);
-			path = FaceImageGalleryTests;
-			sourceTree = "<group>";
-		};
-		8524624C18944F94001315D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8524624D18944F94001315D2 /* FaceImageGalleryTests-Info.plist */,
-				8524624E18944F94001315D2 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		8524625B18945066001315D2 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				85ECCB7918A32B0400787577 /* CRNavigationController */,
 				85CC6AC5189BC2110027BDF4 /* ReflectionView */,
 				85CC6AB8189BC1930027BDF4 /* FXImageView */,
 				853F8F4918997EB400477C94 /* iCarousel */,
@@ -366,6 +419,29 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		85328DEF18A3069300C3DCAF /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				85CC34C818A2DBC400EEF57D /* TTIndexCollectionView.h */,
+				85CC34C918A2DBC400EEF57D /* TTIndexCollectionView.m */,
+				85292DC818A1591F00A670A2 /* TTIndexCollectionViewController.h */,
+				85292DC918A1591F00A670A2 /* TTIndexCollectionViewController.mm */,
+				85CC34CB18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.h */,
+				85CC34CC18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.m */,
+				85328DEC18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.h */,
+				85328DED18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.mm */,
+				85328DF018A307A500C3DCAF /* TTIndexCollectionViewDataSource.h */,
+				85328DF118A307A500C3DCAF /* TTIndexCollectionViewDataSource.mm */,
+				85328DF318A3080800C3DCAF /* TTIndexCollectionViewDelegate.h */,
+				85328DF418A3080800C3DCAF /* TTIndexCollectionViewDelegate.m */,
+				85328DF918A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.h */,
+				85328DFA18A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.m */,
+				85328DFC18A314B500C3DCAF /* UIIndexShelfView.h */,
+				85328DFD18A314B500C3DCAF /* UIIndexShelfView.m */,
+			);
+			name = Index;
+			sourceTree = "<group>";
+		};
 		853F8F4918997EB400477C94 /* iCarousel */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,15 +474,16 @@
 		8572E7DF189FB170001A9BD9 /* Faces */ = {
 			isa = PBXGroup;
 			children = (
+				8556D1FF18A18D3E00F7788B /* TTFaceModel.h */,
+				8556D20018A18D3E00F7788B /* TTFaceModel.mm */,
 				8572E7E9189FBC3C001A9BD9 /* Vo */,
-				8572E7E3189FB54C001A9BD9 /* TTFaceModel.h */,
-				8572E7E4189FB54C001A9BD9 /* TTFaceModel.mm */,
 				8572E7EA189FBFD7001A9BD9 /* TTOpenCVData.h */,
 				8572E7EB189FBFD7001A9BD9 /* TTOpenCVData.mm */,
 				8572E7ED189FC2E5001A9BD9 /* TTImageProcessor.h */,
 				8572E7EE189FC2E5001A9BD9 /* TTImageProcessor.mm */,
 				8572E7F518A03167001A9BD9 /* TTFaceDetector.h */,
 				8572E7F618A03167001A9BD9 /* TTFaceDetector.mm */,
+				852C508618A6C14B009A5644 /* TTImageProcessorDelegate.h */,
 			);
 			name = Faces;
 			sourceTree = "<group>";
@@ -427,26 +504,20 @@
 		859A9167189699E600307DE2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8572E7DB189FB131001A9BD9 /* Faces */,
-				853F8F4F189980E700477C94 /* iCarousel */,
-				85C471E018986FC40006988C /* Common */,
 				85C471DF18986DA50006988C /* Album */,
+				85C471E018986FC40006988C /* Common */,
+				8572E7DB189FB131001A9BD9 /* Faces */,
 				859A9168189699E600307DE2 /* FIGCameraFinderViewController.h */,
 				859A9169189699E600307DE2 /* FIGCameraFinderViewController.mm */,
 				859A916C189699E600307DE2 /* FIGFaceFinderViewController.h */,
 				859A916D189699E600307DE2 /* FIGFaceFinderViewController.m */,
-				859A916A189699E600307DE2 /* FIGNavigationRootCenterViewController.h */,
-				859A916B189699E600307DE2 /* FIGNavigationRootCenterViewController.mm */,
-				859A916E189699E600307DE2 /* FIGNavigationRootLeftViewController.h */,
-				859A916F189699E600307DE2 /* FIGNavigationRootLeftViewController.m */,
-				859A9170189699E600307DE2 /* FIGNavigationRootRightViewController.h */,
-				859A9171189699E600307DE2 /* FIGNavigationRootRightViewController.m */,
-				859A9172189699E600307DE2 /* FIGRootViewController.h */,
-				859A9173189699E600307DE2 /* FIGRootViewController.m */,
-				85292DC818A1591F00A670A2 /* TTFaceCollectionViewController.h */,
-				85292DC918A1591F00A670A2 /* TTFaceCollectionViewController.m */,
-				85292DCB18A159C100A670A2 /* TTFaceUICollectionViewCell.h */,
-				85292DCC18A159C100A670A2 /* TTFaceUICollectionViewCell.m */,
+				859A916A189699E600307DE2 /* TTRootCenterViewController.h */,
+				859A916B189699E600307DE2 /* TTRootCenterViewController.mm */,
+				859A916E189699E600307DE2 /* TTRootLeftViewController.h */,
+				859A916F189699E600307DE2 /* TTRootLeftViewController.m */,
+				859A9172189699E600307DE2 /* TTRootViewController.h */,
+				859A9173189699E600307DE2 /* TTRootViewController.m */,
+				853F8F4F189980E700477C94 /* iCarousel */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -556,6 +627,50 @@
 			name = AlbumReader;
 			sourceTree = "<group>";
 		};
+		85CEED0E18A579C800A699C1 /* OpenCVDatas */ = {
+			isa = PBXGroup;
+			children = (
+				8519B68818A8E99900C69285 /* hogcascade_pedestrians.xml */,
+				8519B68218A8E98500C69285 /* lbpcascade_frontalface.xml */,
+				8519B68318A8E98500C69285 /* lbpcascade_profileface.xml */,
+				8519B68418A8E98500C69285 /* lbpcascade_silverware.xml */,
+				85CEECEA18A579C400A699C1 /* haarcascade_frontalface_alt_tree.xml */,
+				85CEECEB18A579C400A699C1 /* haarcascade_frontalface_default.xml */,
+				85CEECEC18A579C400A699C1 /* haarcascade_fullbody.xml */,
+				85CEECED18A579C400A699C1 /* haarcascade_lefteye_2splits.xml */,
+				85CEECEE18A579C400A699C1 /* haarcascade_lowerbody.xml */,
+				85CEECEF18A579C400A699C1 /* haarcascade_mcs_eyepair_big.xml */,
+				85CEECF018A579C400A699C1 /* haarcascade_mcs_eyepair_small.xml */,
+				85CEECF118A579C400A699C1 /* haarcascade_mcs_leftear.xml */,
+				85CEECF218A579C400A699C1 /* haarcascade_mcs_lefteye.xml */,
+				85CEECF318A579C400A699C1 /* haarcascade_mcs_mouth.xml */,
+				85CEECF418A579C400A699C1 /* haarcascade_mcs_nose.xml */,
+				85CEECF518A579C400A699C1 /* haarcascade_mcs_rightear.xml */,
+				85CEECF618A579C400A699C1 /* haarcascade_mcs_righteye.xml */,
+				85CEECF718A579C400A699C1 /* haarcascade_mcs_upperbody.xml */,
+				85CEECF818A579C400A699C1 /* haarcascade_profileface.xml */,
+				85CEECF918A579C400A699C1 /* haarcascade_righteye_2splits.xml */,
+				85CEECFA18A579C400A699C1 /* haarcascade_smile.xml */,
+				85CEECFB18A579C400A699C1 /* haarcascade_upperbody.xml */,
+				85CEECE618A579AC00A699C1 /* haarcascade_eye_tree_eyeglasses.xml */,
+				85CEECE718A579AC00A699C1 /* haarcascade_eye.xml */,
+				85CEECE418A5799D00A699C1 /* haarcascade_frontalface_alt.xml */,
+				859796C81894FCE300555D88 /* haarcascade_frontalface_alt2.xml */,
+			);
+			name = OpenCVDatas;
+			sourceTree = "<group>";
+		};
+		85ECCB7918A32B0400787577 /* CRNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				85ECCB7A18A32B0400787577 /* CRNavigationBar.h */,
+				85ECCB7B18A32B0400787577 /* CRNavigationBar.m */,
+				85ECCB7C18A32B0400787577 /* CRNavigationController.h */,
+				85ECCB7D18A32B0400787577 /* CRNavigationController.m */,
+			);
+			path = CRNavigationController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -638,11 +753,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CEECE518A5799D00A699C1 /* haarcascade_frontalface_alt.xml in Resources */,
+				85CEED0718A579C400A699C1 /* haarcascade_mcs_rightear.xml in Resources */,
+				85CEECFD18A579C400A699C1 /* haarcascade_frontalface_default.xml in Resources */,
+				85CEED0B18A579C400A699C1 /* haarcascade_righteye_2splits.xml in Resources */,
+				8519B68618A8E98500C69285 /* lbpcascade_profileface.xml in Resources */,
+				85CEED0218A579C400A699C1 /* haarcascade_mcs_eyepair_small.xml in Resources */,
+				85CEED0C18A579C400A699C1 /* haarcascade_smile.xml in Resources */,
+				85CEECFF18A579C400A699C1 /* haarcascade_lefteye_2splits.xml in Resources */,
+				85CEED0818A579C400A699C1 /* haarcascade_mcs_righteye.xml in Resources */,
 				859796C91894FCE300555D88 /* haarcascade_frontalface_alt2.xml in Resources */,
+				85CEED0918A579C400A699C1 /* haarcascade_mcs_upperbody.xml in Resources */,
 				8524623F18944F94001315D2 /* Images.xcassets in Resources */,
 				8524623118944F94001315D2 /* InfoPlist.strings in Resources */,
+				8519B68718A8E98500C69285 /* lbpcascade_silverware.xml in Resources */,
+				85CEECE918A579AC00A699C1 /* haarcascade_eye.xml in Resources */,
 				8524627A18945066001315D2 /* Default-568h@2x.png in Resources */,
-				8524623A18944F94001315D2 /* TuTeng.storyboard in Resources */,
+				85CEED0418A579C400A699C1 /* haarcascade_mcs_lefteye.xml in Resources */,
+				85CEED0518A579C400A699C1 /* haarcascade_mcs_mouth.xml in Resources */,
+				85CEECFE18A579C400A699C1 /* haarcascade_fullbody.xml in Resources */,
+				8519B68518A8E98500C69285 /* lbpcascade_frontalface.xml in Resources */,
+				8519B68918A8E99900C69285 /* hogcascade_pedestrians.xml in Resources */,
+				85CEED0118A579C400A699C1 /* haarcascade_mcs_eyepair_big.xml in Resources */,
+				85CEED0318A579C400A699C1 /* haarcascade_mcs_leftear.xml in Resources */,
+				85CEECFC18A579C400A699C1 /* haarcascade_frontalface_alt_tree.xml in Resources */,
+				85CEED0018A579C400A699C1 /* haarcascade_lowerbody.xml in Resources */,
+				85CEED0A18A579C400A699C1 /* haarcascade_profileface.xml in Resources */,
+				85CEECE818A579AC00A699C1 /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
+				85CEED0D18A579C400A699C1 /* haarcascade_upperbody.xml in Resources */,
+				85CEED0618A579C400A699C1 /* haarcascade_mcs_nose.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +789,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8524625018944F94001315D2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,35 +841,42 @@
 				85C471DB18985C5A0006988C /* FIGPhotoViewController.m in Sources */,
 				8572E7F4189FCA9A001A9BD9 /* TTPhotoInfo.m in Sources */,
 				853F8F551899887E00477C94 /* FIGiCarouselPhotoViewController.m in Sources */,
-				859A9182189699E600307DE2 /* FIGNavigationRootRightViewController.m in Sources */,
 				8572E7EC189FBFD7001A9BD9 /* TTOpenCVData.mm in Sources */,
 				85C471D5189857690006988C /* FIGUICollectionView.m in Sources */,
+				85CC34CD18A2DC5300EEF57D /* TTIndexCollectionViewFlowLayout.m in Sources */,
+				85328DF518A3080800C3DCAF /* TTIndexCollectionViewDelegate.m in Sources */,
 				859A9187189699E600307DE2 /* FIGOpenCVUtils.mm in Sources */,
-				859A9183189699E600307DE2 /* FIGRootViewController.m in Sources */,
+				859A9183189699E600307DE2 /* TTRootViewController.m in Sources */,
 				85CC6ACC189C05AF0027BDF4 /* FIGAlbumReader.m in Sources */,
 				85C471E6189875250006988C /* FIGPhotoDetailViewControllerData.m in Sources */,
 				8524628418945066001315D2 /* UIViewController+JASidePanel.m in Sources */,
 				8572E7EF189FC2E5001A9BD9 /* TTImageProcessor.mm in Sources */,
-				85292DCA18A1591F00A670A2 /* TTFaceCollectionViewController.m in Sources */,
+				85292DCA18A1591F00A670A2 /* TTIndexCollectionViewController.mm in Sources */,
 				85C471E318986FF80006988C /* AssetsDataIsInaccessibleViewController.m in Sources */,
 				85C471CB189854200006988C /* FIGAlbumViewController.m in Sources */,
-				85292DCD18A159C100A670A2 /* TTFaceUICollectionViewCell.m in Sources */,
+				85ECCB7F18A32B0400787577 /* CRNavigationController.m in Sources */,
 				85C471CF1898547E0006988C /* FIGAlbumCollectionViewCell.m in Sources */,
 				859A9184189699E600307DE2 /* FIGCustomFaceRecognizer.mm in Sources */,
 				853F8F4C18997EB400477C94 /* iCarousel.m in Sources */,
-				859A917F189699E600307DE2 /* FIGNavigationRootCenterViewController.mm in Sources */,
-				8572E7E5189FB54C001A9BD9 /* TTFaceModel.mm in Sources */,
+				859A917F189699E600307DE2 /* TTRootCenterViewController.mm in Sources */,
+				85328DF218A307A500C3DCAF /* TTIndexCollectionViewDataSource.mm in Sources */,
 				85C471EC189877F40006988C /* FIGImageScrollView.m in Sources */,
 				85CC6AC3189BC1E60027BDF4 /* FXImageView.m in Sources */,
+				85328DEE18A2DF0D00C3DCAF /* TTIndexCollectionViewCell.mm in Sources */,
+				85ECCB7E18A32B0400787577 /* CRNavigationBar.m in Sources */,
 				8524628318945066001315D2 /* JASidePanelController.m in Sources */,
 				859A917E189699E600307DE2 /* FIGCameraFinderViewController.mm in Sources */,
 				859A9186189699E600307DE2 /* FIGOpenCVData.mm in Sources */,
 				8572E7DE189FB15B001A9BD9 /* TTFacesReader.m in Sources */,
 				8572E7E8189FBB10001A9BD9 /* TTPersonInfo.m in Sources */,
-				859A9181189699E600307DE2 /* FIGNavigationRootLeftViewController.m in Sources */,
-				8524623718944F94001315D2 /* FIGAppDelegate.m in Sources */,
+				85328DFB18A3140100C3DCAF /* TTIndexCollectionViewLayoutAttributes.m in Sources */,
+				859A9181189699E600307DE2 /* TTRootLeftViewController.m in Sources */,
+				85CC34CA18A2DBC400EEF57D /* TTIndexCollectionView.m in Sources */,
+				8524623718944F94001315D2 /* FIGAppDelegate.mm in Sources */,
 				853F8F521899810500477C94 /* FIGiCarouselAlbumViewController.m in Sources */,
+				8556D20118A18D3E00F7788B /* TTFaceModel.mm in Sources */,
 				85CC6AD0189C07810027BDF4 /* FIGAlbumInfo.m in Sources */,
+				85328DFE18A314B500C3DCAF /* UIIndexShelfView.m in Sources */,
 				85CC6AC4189BC1E60027BDF4 /* UIImage+FX.m in Sources */,
 				857BFBC9189C9B100088C645 /* FIGPhotoInfo.m in Sources */,
 				85C471DE18986DA00006988C /* FIGAlbumDetailViewController.m in Sources */,
@@ -744,7 +889,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8524625218944F94001315D2 /* FaceImageGalleryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,22 +907,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8524623018944F94001315D2 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		8524623818944F94001315D2 /* TuTeng.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8524623918944F94001315D2 /* Base */,
-			);
-			name = TuTeng.storyboard;
-			sourceTree = "<group>";
-		};
-		8524624E18944F94001315D2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8524624F18944F94001315D2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -872,7 +1000,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
 				INFOPLIST_FILE = "FaceImageGallery/FaceImageGallery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -892,7 +1019,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceImageGallery/FaceImageGallery-Prefix.pch";
 				INFOPLIST_FILE = "FaceImageGallery/FaceImageGallery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -7,23 +7,31 @@
 //
 
 #import "TTOpenCVData.h"
+#import "TTCst.h"
 
 @implementation TTOpenCVData
 
-+ (NSData *)serializeCvMat:(cv::Mat&)cvMat
+
++ (NSData *)NSDataFromCVMat:(cv::Mat&)cvMat
 {
     return [[NSData alloc] initWithBytes:cvMat.data length:cvMat.elemSize() * cvMat.total()];
 }
 
-+ (cv::Mat)dataToMat:(NSData *)data width:(NSNumber *)width height:(NSNumber *)height
++ (cv::Mat)CVMatFromNSData:(NSData *)data width:(NSNumber *)width height:(NSNumber *)height
 {
     cv::Mat output = cv::Mat((int)[width integerValue], (int)[height integerValue], CV_8UC1);
     output.data = (unsigned char*)data.bytes;
-    
     return output;
 }
 
-+ (CGRect)faceToCGRect:(cv::Rect)face
++ (cv::Mat)CVMatStandardizedFromNSData:(NSData*)imageData
+{
+   return [TTOpenCVData CVMatFromNSData:imageData
+                            width:[NSNumber numberWithInt:TRAIN_FACE_WIDTH]
+                           height:[NSNumber numberWithInt:TRAIN_FACE_HEIGHT]];
+}
+
++ (CGRect)CGRectFromCVRect:(cv::Rect)face
 {
     CGRect faceRect;
     faceRect.origin.x = face.x;
@@ -62,14 +70,15 @@
     
     // Create UIImage from CGImage
     UIImage *finalImage = [UIImage imageWithCGImage:imageRef];
+    
     CGImageRelease(imageRef);
+    
     CGDataProviderRelease(provider);
-    CGColorSpaceRelease(colorSpace);
     
     return finalImage;
 }
 
-+ (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image
++ (cv::Mat)CVMatGrayFromUIImage:(UIImage *)image
 {
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
@@ -87,6 +96,7 @@
                                                     kCGBitmapByteOrderDefault); // Bitmap info flags
     
     CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
+    
     CGContextRelease(contextRef);
     
     return cvMat;
@@ -94,7 +104,29 @@
     //return [TTOpenCVData cvMatFromUIImage:image usingColorSpace:CV_RGB2GRAY];
 }
 
-+ (cv::Mat)cvMatFromUIImage:(UIImage *)image usingColorSpace:(int)outputSpace
++ (cv::Mat)CVMatFromUIImage:(UIImage *)image
+{
+    CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
+    CGFloat cols = image.size.width;
+    CGFloat rows = image.size.height;
+    
+    cv::Mat cvMat(rows, cols, CV_8UC4); // 8 bits per component, 4 channels (color channels + alpha)
+    
+    CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                 // Pointer to  data
+                                                    cols,                       // Width of bitmap
+                                                    rows,                       // Height of bitmap
+                                                    8,                          // Bits per component
+                                                    cvMat.step[0],              // Bytes per row
+                                                    colorSpace,                 // Colorspace
+                                                    kCGImageAlphaNoneSkipLast |
+                                                    kCGBitmapByteOrderDefault); // Bitmap info flags
+    
+    CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
+    CGContextRelease(contextRef);
+    return cvMat;
+}
+
++ (cv::Mat)CVMatFromUIImage:(UIImage *)image usingColorSpace:(int)outputSpace
 {
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
@@ -114,7 +146,6 @@
     
     CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
     CGContextRelease(contextRef);
-    CGColorSpaceRelease(colorSpace);
     
     cv::Mat finalOutput;
     cvtColor(cvMat, finalOutput, outputSpace);
@@ -122,27 +153,25 @@
     return finalOutput;
 }
 
-+ (cv::Mat)cvMatFromUIImage:(UIImage *)image
++ (cv::Mat)pullStandardizedFaceGray:(cv::Rect)face fromImage:(cv::Mat&)image
 {
-    CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
-    CGFloat cols = image.size.width;
-    CGFloat rows = image.size.height;
+    cv::Mat onlyTheFace;
     
-    cv::Mat cvMat(rows, cols, CV_8UC4); // 8 bits per component, 4 channels (color channels + alpha)
+    cv::cvtColor(image(face), onlyTheFace, CV_RGB2GRAY);
     
-    CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                 // Pointer to  data
-                                                    cols,                       // Width of bitmap
-                                                    rows,                       // Height of bitmap
-                                                    8,                          // Bits per component
-                                                    cvMat.step[0],              // Bytes per row
-                                                    colorSpace,                 // Colorspace
-                                                    kCGImageAlphaNoneSkipLast |
-                                                    kCGBitmapByteOrderDefault); // Bitmap info flags
+    cv::resize(onlyTheFace, onlyTheFace, cv::Size(TRAIN_FACE_WIDTH, TRAIN_FACE_HEIGHT), 0, 0);
     
-    CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
-    CGContextRelease(contextRef);
+    return onlyTheFace;
+}
+
+
++ (cv::Mat)pullStandardizedFace:(cv::Rect)face fromImage:(cv::Mat&)image
+{
+    cv::Mat onlyTheFace;
     
-    return cvMat;
+    cv::resize(image(face), onlyTheFace, cv::Size(TRAIN_FACE_WIDTH, TRAIN_FACE_HEIGHT), 0, 0);
+    
+    return onlyTheFace;
 }
 
 @end

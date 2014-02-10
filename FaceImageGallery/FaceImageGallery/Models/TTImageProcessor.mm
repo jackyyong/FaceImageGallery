@@ -6,53 +6,58 @@
 //  Copyright (c) 2014年 com.heraysoft. All rights reserved.
 //
 
-#import "TTImageProcessor.h"
 #import <CoreLocation/CoreLocation.h>
+#import "TTImageProcessor.h"
 #import "TTFaceDetector.h"
 #import "TTOpenCVData.h"
 #import "TTFaceModel.h"
 #import "TTPersonInfo.h"
 #import "TTFaceInfo.h"
 #import "TTPhotoInfo.h"
-
-#define USE_FULL_RESOLUTION_IMAGE NO
+#import "TTCst.h"
 
 @interface TTImageProcessor ()
 
+    //人脸探测器
 @property (nonatomic, strong) TTFaceDetector *faceDetector;
+
+    //人脸模型
 @property (nonatomic, strong) TTFaceModel *faceModel;
+
+    //日期格式化
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) ALAssetsLibrary * assetsLibrary;
-@property (nonatomic, strong) NSMutableArray *albums;
-@property (nonatomic, strong) NSMutableArray *photos;
+
+    //数字格式化
 @property (nonatomic, strong) NSNumberFormatter *numberFormatter;
+
+    //相册库引用
+@property (nonatomic, strong) ALAssetsLibrary * assetsLibrary;
 
 @end
 
 @implementation TTImageProcessor
 
+-(void)dealloc {
+    
+    [_dateFormatter release];
+    _dateFormatter = nil;
+    
+    [_assetsLibrary release];
+    _assetsLibrary = nil;
+    
+    [_numberFormatter release];
+    _numberFormatter = nil;
+    
+    
+    [super dealloc];
+}
+
 -(TTFaceDetector *)faceDetector{
     if (!_faceDetector) {
-        _faceDetector = [[TTFaceDetector alloc]init];
+        _faceDetector = [[TTFaceDetector alloc]init ];
     }
     
     return _faceDetector;
-}
-
--(NSMutableArray *)albums{
-    if (!_albums) {
-        _albums = [[NSMutableArray alloc]init];
-    }
-    
-    return _albums;
-}
-
--(NSMutableArray *)photos{
-    if (!_photos) {
-        _photos = [[NSMutableArray alloc]init];
-    }
-    
-    return _photos;
 }
 
 -(NSNumberFormatter *)numberFormatter{
@@ -77,25 +82,10 @@
 -(TTFaceModel *)faceModel{
     if (!_faceModel) {
         _faceModel = [[TTFaceModel alloc]initWithEigenFaceRecognizer];
-        
         [_faceModel trainModel];
-        
     }
     
     return _faceModel;
-}
-
-
--(void)postNotifiyProcess:(NSString *) info totalCount:(NSInteger) totalCount currentIndex:(NSInteger) currentIndex{
-    
-    float percent = (currentIndex/totalCount);
-    
-    NSString *percentString = [self.numberFormatter stringFromNumber:[NSNumber numberWithFloat:percent]];
-    
-    [[NSNotificationCenter defaultCenter]
-                           postNotificationName:@"ProcessLibrary"
-                           object:self
-     userInfo:@{@"info" : info, @"process" : percentString}];
 }
 
 -(NSDateFormatter *)dateFormatter{
@@ -107,236 +97,317 @@
     return _dateFormatter;
 }
 
--(void) processAllLibrary {
-    // emumerate through our groups and only add groups that contain photos
-    ALAssetsLibraryGroupsEnumerationResultsBlock listGroupBlock = ^(ALAssetsGroup *group, BOOL *stop) {
-        ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
-        [group setAssetsFilter:onlyPhotosFilter];
-        if ([group numberOfAssets] > 0) {
-            [self.albums addObject:group];
-        } else {
-            [self processAllLibraryInternal];
-        }
-    };
+-(id)init {
+    self = [super init];
     
-    // setup our failure view controller in case enumerateGroupsWithTypes fails
-    ALAssetsLibraryAccessFailureBlock failureBlock = ^(NSError *error) {
-        NSLog(@"%@", [error domain]);
-    };
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(whenNewAlbumFound:) name:EVENT_NEW_GROUP_FOUND object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(whenNewAssetFound:) name:EVENT_NEW_ASSET_FOUND object:nil];
+    }
+    
+    return self;
+}
+
+// 当发现新相册时, 调用此函数, 此函数处理新发现的相册
+-(void) whenNewAlbumFound :(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    if (userInfo) {
+        ALAssetsGroup * group = [userInfo objectForKey:EVENT_NGF_ARG_GROUP];
+        NSLog(@"Start process group %@ ", [group valueForProperty:ALAssetsGroupPropertyName]);
+        [self processGroup:group];
+        NSLog(@"End process group %@ ", [group valueForProperty:ALAssetsGroupPropertyName]);
+    }
+}
+
+-(void) whenNewAssetFound :(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    if (userInfo) {
+        ALAsset * asset = [userInfo objectForKey:EVENT_NSF_ARG_ASSET];
+        NSLog(@"Start process asset %@ ", [asset valueForProperty:ALAssetPropertyAssetURL]);
+        [self process:asset];
+        NSLog(@"End process asset %@ ", [asset valueForProperty:ALAssetPropertyAssetURL]);
+    }
+}
+
+-(BOOL) isDatabaseCreated {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * lastUpdateTimeStr = [userDefaults objectForKey:@"LastUpdateTime"];
+    
+    if (lastUpdateTimeStr) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(void) processAllLibrary {
+    // update last scan time
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    [userDefaults setValue:[self.dateFormatter stringFromDate:[NSDate date]] forKey:@"LastUpdateTime"];
+    
+    [self cleanDatabase];
     
     NSInteger groupTypes = (ALAssetsGroupAlbum | ALAssetsGroupEvent | ALAssetsGroupFaces | ALAssetsGroupSavedPhotos);
-    
-    [self.assetsLibrary enumerateGroupsWithTypes:groupTypes usingBlock:listGroupBlock failureBlock:failureBlock];
-    
+    [self.assetsLibrary enumerateGroupsWithTypes:groupTypes usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+            ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
+            [group setAssetsFilter:onlyPhotosFilter];
+            if ([group numberOfAssets] > 0) {
+                // Just Notify
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:EVENT_NEW_GROUP_FOUND
+                 object:self
+                 userInfo:@{EVENT_NGF_ARG_GROUP : group}];
+                
+                if ([self.delegate respondsToSelector:@selector(whenNewGroupFound:)]) {
+                    [self.delegate whenNewGroupFound:group];
+                }
+            }
+        }
+        failureBlock:^(NSError *error) {
+            NSLog(@"%@", [error domain]);
+   }];
 }
 
--(void) processAllLibraryInternal{
-    NSInteger totalCount = 0;
-    
-    if ([self.albums count] <= 0) {
-        [self postNotifiyProcess:@"No photos found in your phone." totalCount:1 currentIndex:1];
-    } else {
-        for (int i = 0; i < [self.albums count]; i++) {
-            totalCount = totalCount + [[self.albums objectAtIndex:i] numberOfAssets];
-        }
-        
-        [self postNotifiyProcess:[NSString stringWithFormat:@"Found %ld photos in %ld album", totalCount, [self.albums count]] totalCount:totalCount currentIndex:0];
-        
-        NSInteger currentIndex = 0;
-        for (int i = 0; i < [self.albums count]; i++) {
-            
-            currentIndex = currentIndex + [self processGroup:[self.albums objectAtIndex:i] currentIndex:currentIndex totalCount:totalCount];
-            
-        }
-    }
-}
 
--(NSInteger) processGroup:(ALAssetsGroup*)group {
-    return [self processGroup:group currentIndex:1 totalCount:1];
-}
-
--(NSInteger) processGroup:(ALAssetsGroup*)group currentIndex:(NSInteger) currentIndex totalCount:(NSInteger) totalCount {
-    ALAssetsGroupEnumerationResultsBlock assetsEnumerationBlock = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
-        if (result) {
-            [self.photos addObject:result];
-        }
-    };
-    
+-(void) processGroup:(ALAssetsGroup*)group {
     ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
     [group setAssetsFilter:onlyPhotosFilter];
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    dispatch_async(queue, ^{
-        [group enumerateAssetsUsingBlock:assetsEnumerationBlock];
-    });
-    
-    [self processGroupInternal:group currentIndex:currentIndex totalCount:totalCount];
-    
-    return [self.photos count];
-}
-
--(void) processGroupInternal:(ALAssetsGroup*)group currentIndex:(NSInteger) currentIndex totalCount:(NSInteger) totalCount {
-    NSString * groupName = [group valueForProperty:ALAssetsGroupPropertyName];
-    
-    NSLog(@"Start Process Group named %@", groupName);
-    
-    if ([self.photos count] <= 0) {
-        [self postNotifiyProcess:@"No photos found in your phone." totalCount:1 currentIndex:1];
-    } else {
-        
-        for (int i = 0; i < [self.photos count]; i++) {
-            currentIndex++;
-            [self process:[self.photos objectAtIndex:i]];
+    [group enumerateAssetsUsingBlock:^(ALAsset *asset, NSUInteger index, BOOL *stop) {
+        if (asset) {
+            // Just Notify
+            [[NSNotificationCenter defaultCenter]
+                                    postNotificationName:EVENT_NEW_ASSET_FOUND
+                                    object:self
+                                    userInfo:@{EVENT_NSF_ARG_ASSET : asset}];
             
-            [self postNotifiyProcess:[NSString stringWithFormat:@"Process %ld/%ld", currentIndex, totalCount] totalCount:totalCount currentIndex:currentIndex];
+            if ([self.delegate respondsToSelector:@selector(whenNewAssetFound:)]) {
+                [self.delegate whenNewAssetFound:asset];
+            }
+            
         }
-    }
-    
-    NSLog(@"End Process Group named %@", groupName);
-
+    }];
 }
 
 -(void) process:(ALAsset*)asset {
     
-    ALAssetRepresentation *assetRepresentation = [asset defaultRepresentation];
-    
     // 开始处理人脸识别
-    
-    // 图片地址
-    NSString * imageUrlAbsoluteString  = [[assetRepresentation url] absoluteString];
+    ALAssetRepresentation *assetRepresentation = [asset defaultRepresentation];
     
     CGImageRef imageForRecRef = nil;
     
     if (USE_FULL_RESOLUTION_IMAGE) {
         imageForRecRef = [assetRepresentation fullResolutionImage];
-
     } else {
         imageForRecRef = [assetRepresentation fullScreenImage];
-        
     }
     
     UIImage *imageForRec = [UIImage imageWithCGImage:imageForRecRef];
     
-    cv::Mat imageForRecMat = [TTOpenCVData cvMatFromUIImage:imageForRec];
+    // 彩色照片转换成灰度Mat
+    cv::Mat imageForRecMatGray = [TTOpenCVData CVMatFromUIImage:imageForRec usingColorSpace:CV_RGB2GRAY];
     
-    std::vector<cv::Rect> faces = [self.faceDetector facesFromCVImage:imageForRecMat];
+    cv::Mat imageForRecMat = [TTOpenCVData CVMatFromUIImage:imageForRec];
+    
+    // 从图片中提取人脸
+    std::vector<cv::Rect> faces = [self.faceDetector facesFromCVImage:imageForRecMatGray];
     
     if (!faces.empty()) {
         
-        // 全屏图片
-        //CGImageRef fullScreenImageRef = [assetRepresentation fullScreenImage];
+        // 保存新图片信息
+        NSUInteger newPhotoId = [self.faceModel getNextPhotoId];
         
-        // 全尺寸图片
-        //CGImageRef fullResolutionImageRef = [assetRepresentation fullResolutionImage];
-        //UIImage *fullResolutionImage = [UIImage imageWithCGImage:[assetRepresentation fullResolutionImage]];
+        TTPhotoInfo* photoInfo = [self createPhotoInfo:newPhotoId
+                                           absoluteURL:[[assetRepresentation url] absoluteString] //图片地址
+                                              takeTime:[asset valueForProperty:ALAssetPropertyDate] //图片拍摄时间
+                                           dimensions:[assetRepresentation dimensions] // 图片大小
+                                              location:[asset valueForProperty:ALAssetPropertyLocation]//拍摄位置
+                                                 scale:[assetRepresentation scale]
+                                  ];
         
-        // 图片大小
-        CGSize dimensions = [assetRepresentation dimensions];
+        [self.faceModel newPhoto:photoInfo];
         
-        // 图片地址
-        NSString * absoluteURL  = [[assetRepresentation url] absoluteString];
+        [photoInfo release];
         
-        // 图片拍摄时间
-        NSDate * takeDate = [asset valueForProperty:ALAssetPropertyDate];
+        NSLog(@"Process %ld faces start", faces.size());
         
-        // 图片拍摄位置
-        CLLocation * takeLocation =[asset valueForProperty:ALAssetPropertyLocation];
-        
-        TTPhotoInfo* photoInfo = [self createPhotoInfo:absoluteURL takeTime:takeDate dimensions:dimensions location:takeLocation];
-        
-        // new photo
-        NSInteger photoId = [self.faceModel newPhoto:photoInfo];
-        
-        NSLog(@"Start process and found %ld faces in image %@", faces.size(), imageUrlAbsoluteString);
-        
+        // 处理每一张人脸
         for (std::vector<cv::Rect>::iterator iter = faces.begin(); iter != faces.end(); ++iter) {
-            [self processSingleFace: *iter inImage:imageForRecMat assetInfo:asset photoId:photoId];
+            [self processSingleFace: *iter              //人脸矩形
+                            inImage:imageForRecMat      //原图mat
+                        inImageGray:imageForRecMatGray  //灰度图mat
+                          assetInfo:asset               //asset
+                            photoId:newPhotoId          //新图片id
+             ];
         }
-        
-        NSLog(@"End process and found %ld faces in image %@", faces.size(), imageUrlAbsoluteString);
-        
-    } else {
-        NSLog(@"Because of no faces found, so ignore photos with url  %@", imageUrlAbsoluteString);
+        NSLog(@"Process %ld faces end ", faces.size());
+
     }
+    
+    if ([self.delegate respondsToSelector:@selector(whenNewAssetProcessEnd:)]) {
+        [self.delegate whenNewAssetProcessEnd:asset];
+    }
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:EVENT_NEW_ASSET_PROCESS_END
+     object:self
+     userInfo:@{EVENT_NAPE_ARG_ASSET : asset}];
+    
 }
 
 // 处理单个面孔
--(void) processSingleFace:(cv::Rect)face inImage:(cv::Mat&)image assetInfo:(ALAsset*)asset photoId:(NSInteger)photoId  {
-    // to find
-    NSDictionary * match = [self.faceModel recognizeFace:face inImage:image];
+-(void) processSingleFace:(cv::Rect)face inImage:(cv::Mat&)image inImageGray:(cv::Mat&)imageGray assetInfo:(ALAsset*)asset photoId:(NSUInteger)photoId  {
     
-    cv::Mat faceDataMat = [self.faceModel pullStandardizedFace:face fromImage:image];
+    cv::Mat standardizedFaceGray  = [TTOpenCVData pullStandardizedFace:face fromImage:imageGray];
     
-    NSData *faceData = [TTOpenCVData serializeCvMat:faceDataMat];
+    // 匹配人脸
+    NSDictionary * match = [self.faceModel recognizeFace:standardizedFaceGray];
     
+    //next faceid
     TTFaceInfo *faceInfo = nil;
-    NSInteger newFaceId;
+    NSUInteger newFaceId = [self.faceModel getNextFaceId];
+    // 保存彩色图片到文件系统
+    NSString * newFaceImage = [self saveFacePNGToFileSystem:face inImage:image faceId:newFaceId];
+    
+    if ([self.delegate respondsToSelector:@selector(whenNewFaceFound:)]) {
+        [self.delegate whenNewFaceFound:newFaceId];
+    }
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:EVENT_NEW_FACE_FOUND
+     object:self
+     userInfo:@{EVENT_NFF_ARG_FACEID : [NSNumber numberWithInteger:newFaceId]}];
+    
+    NSUInteger personId = nil;
+    NSNumber * confidence = nil;
+    
     // Match found
     if (match && [match objectForKey:@"personID"] != [NSNumber numberWithInt:-1]) {
         
-        NSInteger personId = (NSInteger)[match objectForKey:@"personID"];
+        NSString * confidenceStr = [NSString stringWithFormat:@"Confidence: %@",
+                      [self.numberFormatter stringFromNumber:[match objectForKey:@"confidence"]]];
         
-        // new face
-        faceInfo = [self createFaceInfo:personId photoId:photoId image:faceData];
+        NSLog(@"confidence = %@ ", confidenceStr);
         
-        newFaceId = [self.faceModel newFace:faceInfo];
+        confidence = [match objectForKey:@"confidence"];
         
-        NSLog(@"[Matched]Person:%ld Face:%ld", personId, newFaceId);
+        if ([confidence doubleValue] > 0.5) {
+            personId = (NSUInteger)[match objectForKey:@"personID"];
+            
+            NSLog(@"[Matched]Person:%lu Face:%lu", personId, newFaceId);
+            
+            [self.faceModel updatePersonRelatedPhotosCount:personId];
+        }
         
-        // update person
-        [self.faceModel updatePersonRelatedPhotosCount:personId];
-    } else {
-        // new face
-        faceInfo = [self createFaceInfo:0 photoId:photoId image:faceData];
-        newFaceId = [self.faceModel newFace:faceInfo];
-        
-        // new person
-        TTPersonInfo *personInfo = [self createPersonInfo:newFaceId];
-        NSInteger newPersonId = [self.faceModel newPerson:personInfo];
-        
-        NSLog(@"[NotMatched]Person:%ld Face:%ld", newPersonId, newFaceId);
-        
-        // update face with personid, set face's personid with newfaceid
-        [self.faceModel createRelationshipBetween:newPersonId faceId:newFaceId];
-        
-        [faceInfo setPersonId:newPersonId];
     }
     
+     // is new person
+    if (!personId) {
+        // new person
+        personId = [self.faceModel getNextPersonId];
+        TTPersonInfo *personInfo = [self createPersonInfo:personId showFaceId:newFaceId];
+        
+        [self.faceModel newPerson:personInfo];
+        
+        if ([self.delegate respondsToSelector:@selector(whenNewPersonFound:)]) {
+            [self.delegate whenNewPersonFound:personId];
+        }
+        
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:EVENT_NEW_PERSON_FOUND
+         object:self
+         userInfo:@{EVENT_NPF_ARG_PERSONID : [NSNumber numberWithInteger:personId]}];
+        
+        NSLog(@"[NotMatched]Person:%ld Face:%ld", personId, newFaceId);
+        
+        [personInfo release];
+    }
     
-    UIImage *imageToSave = [[UIImage alloc] initWithData:faceData];
+    NSData *serialized = [TTOpenCVData NSDataFromCVMat:standardizedFaceGray];
     
-    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    // new face
+    faceInfo = [self createFaceInfo:newFaceId personId:personId photoId:photoId image:newFaceImage trainData:serialized faceRect:face confidence:confidence];
     
-    NSString *pngFilePath = [NSString stringWithFormat:@"%@/%ld.png", docDir, newFaceId];
-    
-	NSData *data1 = [NSData dataWithData:UIImagePNGRepresentation(imageToSave)];
-    
-	[data1 writeToFile:pngFilePath atomically:YES];
-    
-    
-    // save new face to file
+    [self.faceModel newFace:faceInfo];
     
     NSLog(@"Train new face start.");
+    //Just for train
     
-    [self.faceModel learnFace:faceInfo];
+    [self.faceModel learnFace:standardizedFaceGray personId:personId];
+    
+    [faceInfo release];
     
     NSLog(@"Train new face end.");
+    
+}
 
+-(NSString*) saveFacePNGToFileSystem:(cv::Rect)face inImage:(cv::Mat&)image faceId:(NSUInteger)faceId {
+    cv::Mat faceMat;
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    NSString *pngFilePath = nil;
+    NSString *parentFolder = [NSString stringWithFormat:@"%@/faces", docDir];
+    
+    faceMat = [TTOpenCVData pullStandardizedFace:face fromImage:image];
+    pngFilePath = [NSString stringWithFormat:@"%@/%ld.png", parentFolder, faceId];
+    
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:parentFolder isDirectory:nil]) {
+        BOOL success = [fileManager createDirectoryAtPath:parentFolder withIntermediateDirectories:NO attributes:nil error:nil];
+        NSLog(@"success 1: %i", success);
+    }
+    
+    UIImage *imageToSave = [TTOpenCVData UIImageFromCVMat:faceMat];
+    
+    NSData *dataToSave = [NSData dataWithData:UIImagePNGRepresentation(imageToSave)];
+    
+    NSLog(@"Start wirte file to %@.", pngFilePath);
+    
+    [fileManager createFileAtPath:pngFilePath contents:dataToSave attributes:nil];
+    
+    NSLog(@"End wirte file to %@.", pngFilePath);
+    
+    return pngFilePath;
 }
 
 -(void) cleanDatabase {
     [self.faceModel deleteAllPersons];
     [self.faceModel deleteAllFaces];
     [self.faceModel deleteAllPhotos];
+    //
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *parentFolder = [NSString stringWithFormat:@"%@/faces", docDir];
+    
+    if (![fileManager fileExistsAtPath:parentFolder isDirectory:nil]) {
+        NSDirectoryEnumerator* en = [fileManager enumeratorAtPath:parentFolder];
+        
+        NSError* err = nil;
+        BOOL res;
+        NSString* file;
+        while (file = [en nextObject]) {
+            res = [fileManager removeItemAtPath:[parentFolder stringByAppendingPathComponent:file] error:&err];
+            if (!res && err) {
+                NSLog(@"oops: %@", err);
+            }
+        }
+        
+    }
 }
 
--(TTPhotoInfo*)createPhotoInfo:(NSString*)absoluteURL takeTime:(NSDate*)takeDate dimensions:(CGSize)dimensions location:(CLLocation *)takeLocation {
+-(TTPhotoInfo*)createPhotoInfo:(NSUInteger) photoId absoluteURL:(NSString*)absoluteURL takeTime:(NSDate*)takeDate dimensions:(CGSize)dimensions location:(CLLocation *)takeLocation scale:(float)scale{
     // create new photo
     TTPhotoInfo * photoInfo = [[TTPhotoInfo alloc] init];
     [photoInfo setTakeTime:[self.dateFormatter stringFromDate:takeDate]];
     [photoInfo setAbsoluteURL:absoluteURL];
     [photoInfo setWidth:dimensions.width];
     [photoInfo setHeight:dimensions.height];
+    [photoInfo setId:photoId];
+    [photoInfo setScale:scale];
     
     if (takeLocation) {
         [photoInfo setLatitude:takeLocation.coordinate.latitude];
@@ -348,7 +419,7 @@
 }
 
 
--(TTPersonInfo*)createPersonInfo:(NSInteger)showFaceId  {
+-(TTPersonInfo*)createPersonInfo:(NSUInteger)personId showFaceId:(NSUInteger)showFaceId  {
     // create new photo
     TTPersonInfo * personInfo = [[TTPersonInfo alloc] init];
     
@@ -356,18 +427,27 @@
     [personInfo setShowFaceId:showFaceId];
     [personInfo setName:@"未标记"];
     [personInfo setRelatedPhotosCount:1];
+    [personInfo setId:personId];
     
     return personInfo;
 }
 
 
--(TTFaceInfo*)createFaceInfo:(NSInteger) personId  photoId:(NSInteger) photoId image:(NSData*)image {
+-(TTFaceInfo*)createFaceInfo:(NSUInteger) newFaceId personId:(NSUInteger)personId photoId:(NSUInteger)photoId image:(NSString*)image trainData:(NSData*)trainData faceRect:(cv::Rect)faceRect confidence:(NSNumber*)confidence{
     // create new face
     TTFaceInfo * faceInfo = [[TTFaceInfo alloc] init];
     
+    [faceInfo setId:newFaceId];
     [faceInfo setPersonId:personId];
     [faceInfo setPhotoId:photoId];
     [faceInfo setImage:image];
+    
+    [faceInfo setTrainData:trainData];
+    [faceInfo setConfidence:[confidence doubleValue]];
+    [faceInfo setRectX:faceRect.x];
+    [faceInfo setRectY:faceRect.y];
+    [faceInfo setRectWidth:faceRect.width];
+    [faceInfo setRectHeight:faceRect.height];
     
     return faceInfo;
 }

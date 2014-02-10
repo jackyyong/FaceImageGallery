@@ -11,19 +11,19 @@
 @interface TTPersonInfo : NSObject
 
     // 编号
-   @property (nonatomic, assign) NSInteger id;
+   @property (nonatomic, assign) NSUInteger id;
     
    // 名称
-   @property (nonatomic, strong) NSString * name;
+   @property (nonatomic, retain) NSString * name;
     
     // 是否从通讯录连接
    @property (nonatomic, assign) BOOL linkFromContact;
     
     // 显示的面孔id
-   @property (nonatomic, assign) NSInteger showFaceId;
+   @property (nonatomic, assign) NSUInteger showFaceId;
     
     // 关联的图片数量
-   @property (nonatomic, assign) NSInteger relatedPhotosCount;
+   @property (nonatomic, assign) NSUInteger relatedPhotosCount;
     
     // 关联的所有的图片, 类型是 TTPhotoInfo
    @property (nonatomic, strong) NSMutableArray * photos;

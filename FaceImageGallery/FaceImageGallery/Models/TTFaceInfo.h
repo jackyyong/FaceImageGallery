@@ -12,16 +12,33 @@
 @interface TTFaceInfo : NSObject
 
     // 面孔id
-    @property (nonatomic, assign) NSInteger id;
+    @property (nonatomic, assign) NSUInteger id;
     
     // Person id
-    @property (nonatomic, assign) NSInteger personId;
+    @property (nonatomic, assign) NSUInteger personId;
     
     // 面孔存在的图片Id
-    @property (nonatomic, assign) NSInteger photoId;
+    @property (nonatomic, assign) NSUInteger photoId;
+
+    // 面孔在图片中的矩形坐标x
+    @property (nonatomic, assign) NSUInteger rectX;
+
+    // 面孔在图片中的矩形坐标y
+    @property (nonatomic, assign) NSUInteger rectY;
+
+    // 面孔在图片中的矩形宽度
+    @property (nonatomic, assign) NSUInteger rectWidth;
+
+    // 面孔在图片中的矩形高度
+    @property (nonatomic, assign) NSUInteger rectHeight;
     
     // 面孔图片数据
-    @property (nonatomic, strong) NSData * image;
+    @property (nonatomic, retain) NSString * image;
+
+    @property (nonatomic, strong) NSData * trainData;
+
+    // 识别信心指数
+    @property (nonatomic, assign) double confidence;
 
     // 此面孔所在的图片信息
     @property (nonatomic, strong) TTPhotoInfo * photoInfo;
